@@ -1,13 +1,13 @@
-# Nameiro - Premium Domain Portfolio 💎
+# DomainBags - Premium Domain Portfolio 💎
 
-**Nameiro** is a high-performance, modern domain portfolio application built for professional domain investors. It features a stunning "Glassmorphism" UI, an integrated Admin Dashboard with AI capabilities, and a secure backend powered by Firebase.
+**DomainBags** is a high-performance, modern domain portfolio application built for professional domain investors. It features a stunning "Glassmorphism" UI, an integrated Admin Dashboard with AI capabilities, and a secure backend powered by Firebase.
 
 ## ✨ Features
 
 ### 🎨 Frontend Experience
 *   **Premium Aesthetic**: Dark mode design with neon accents and glass-panel effects.
 *   **Dynamic Portfolio**: Paginated grid view of domains with category filtering.
-*   **Trust & Credibility**: Dedicated sections for "Nameiro Guarantee" and verified Seller Profile.
+*   **Trust & Credibility**: Dedicated sections for "DomainBags Guarantee" and verified Seller Profile.
 *   **Smart Buy Options**: "Buy Through" dropdown redirecting to major trusted registrars (GoDaddy, Namecheap, Dan, Escrow).
 
 ### 🛠️ Admin Dashboard

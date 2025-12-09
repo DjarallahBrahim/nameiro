@@ -28,7 +28,7 @@ const TrustSection = () => {
     return (
         <section className="trust-section container">
             <div className="trust-header">
-                <h2 className="section-title">The Nameiro <span className="highlight">Guarantee</span></h2>
+                <h2 className="section-title">The DomainBags <span className="highlight">Guarantee</span></h2>
                 <p className="section-subtitle">Premium domains deserve a premium buying experience.</p>
             </div>
 
