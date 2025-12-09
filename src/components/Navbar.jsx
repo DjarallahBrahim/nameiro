@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
+    const location = useLocation();
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -12,17 +15,30 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const handleNavClick = (e, targetId) => {
+        e.preventDefault();
+
+        if (location.pathname === '/') {
+            const element = document.querySelector(targetId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        } else {
+            navigate(`/${targetId}`);
+        }
+    };
+
     return (
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="container nav-content">
-                <div className="logo">
+                <Link to="/" className="logo" style={{ textDecoration: 'none', color: 'inherit' }}>
                     Domain<span className="highlight">Bags</span>
-                </div>
+                </Link>
                 <ul className="nav-links">
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#portfolio">Domains</a></li>
-                    <li><a href="#contact" className="btn btn-primary btn-sm">Contact</a></li>
+                    <li><a href="#hero" onClick={(e) => handleNavClick(e, '#hero')}>Home</a></li>
+                    <li><a href="#about" onClick={(e) => handleNavClick(e, '#about')}>About</a></li>
+                    <li><a href="#portfolio" onClick={(e) => handleNavClick(e, '#portfolio')}>Domains</a></li>
+                    <li><a href="#contact" className="btn btn-primary btn-sm" onClick={(e) => handleNavClick(e, '#contact')}>Contact</a></li>
                 </ul>
             </div>
         </nav>
