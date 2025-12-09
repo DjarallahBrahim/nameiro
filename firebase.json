@@ -1,16 +1,4 @@
 {
-  "apphosting": {
-    "backendId": "nameiro",
-    "rootDir": "src",
-    "ignore": [
-      "node_modules",
-      ".git",
-      "firebase-debug.log",
-      "firebase-debug.*.log",
-      "functions"
-    ],
-    "alwaysDeployFromSource": false
-  },
   "hosting": {
     "public": "dist",
     "ignore": [
