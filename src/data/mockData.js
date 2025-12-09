@@ -1,0 +1,62 @@
+export const domains = [
+    {
+        id: 1,
+        name: "AIArchitect.io",
+        price: 5000,
+        category: "AI",
+        status: "Available",
+        views: 1240,
+        created: "2023-11-15",
+    },
+    {
+        id: 2,
+        name: "CryptoVault.com",
+        price: 12000,
+        category: "Crypto",
+        status: "Available",
+        views: 890,
+        created: "2023-10-01",
+    },
+    {
+        id: 3,
+        name: "UrbanWear.store",
+        price: 850,
+        category: "Retail",
+        status: "Sold",
+        views: 450,
+        created: "2023-09-20",
+    },
+    {
+        id: 4,
+        name: "CodeNinja.dev",
+        price: 2500,
+        category: "Tech",
+        status: "Available",
+        views: 3100,
+        created: "2024-01-05",
+    },
+    {
+        id: 5,
+        name: "GreenEnergy.org",
+        price: 2000,
+        category: "Eco",
+        status: "Available",
+        views: 600,
+        created: "2023-08-12",
+    },
+    {
+        id: 6,
+        name: "MetaVerseHub.net",
+        price: 4500,
+        category: "Tech",
+        status: "Pending",
+        views: 1500,
+        created: "2024-02-01",
+    },
+];
+
+export const sales = [
+    { name: "CloudScale.com", price: 8500, date: "2 days ago" },
+    { name: "DevTools.io", price: 3200, date: "1 week ago" },
+    { name: "FinTechPro.net", price: 1500, date: "2 weeks ago" },
+];

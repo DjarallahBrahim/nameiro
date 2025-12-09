@@ -1,0 +1,61 @@
+.sales-ticker-container {
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--glass-border);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    height: 50px;
+}
+
+.ticker-label {
+    background: var(--secondary);
+    color: #fff;
+    padding: 0 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    z-index: 10;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.ticker-track {
+    flex-grow: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+.ticker-content {
+    display: inline-block;
+    animation: scroll 20s linear infinite;
+}
+
+.ticker-item {
+    display: inline-block;
+    margin-right: 50px;
+    opacity: 0.8;
+}
+
+.sale-name {
+    color: var(--text-main);
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.sale-price {
+    color: var(--primary);
+    font-family: monospace;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
