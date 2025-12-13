@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { db } from '../../firebase';
 import { collection, getDocs, deleteDoc, doc, updateDoc, query, orderBy } from 'firebase/firestore';
 import { useToast } from '../../context/ToastContext';
+import { callGeminiPrompt, callGeminiImage } from '../../utils/gemini';
 
 const DomainManager = () => {
     const [domains, setDomains] = useState([]);
@@ -16,6 +17,9 @@ const DomainManager = () => {
 
     const [editingId, setEditingId] = useState(null);
     const [editForm, setEditForm] = useState({});
+    const [aiLoading, setAiLoading] = useState(false); // for edit mode AI
+    const [editHoverRating, setEditHoverRating] = useState(0);
+
     const { success, error } = useToast();
 
     useEffect(() => {
@@ -49,12 +53,18 @@ const DomainManager = () => {
 
     const startEdit = (domain) => {
         setEditingId(domain.id);
-        setEditForm(domain);
+        setEditForm({
+            ...domain,
+            special: domain.special || 0,
+            image: domain.image || '',
+            category: domain.category || ''
+        });
     };
 
     const cancelEdit = () => {
         setEditingId(null);
         setEditForm({});
+        setEditHoverRating(0);
     };
 
     const saveEdit = async () => {
@@ -62,8 +72,10 @@ const DomainManager = () => {
             await updateDoc(doc(db, "domains", editingId), {
                 name: editForm.name,
                 price: Number(editForm.price),
-                status: editForm.status
-                // category is skipped for simplicity here, but can be added
+                status: editForm.status,
+                category: editForm.category,
+                special: Number(editForm.special),
+                image: editForm.image
             });
             setEditingId(null);
             success("Domain updated successfully!");
@@ -71,6 +83,21 @@ const DomainManager = () => {
         } catch (e) {
             console.error(e);
             error("Error updating domain");
+        }
+    };
+
+    // AI Generation in Edit Mode
+    const handleEditMagic = async () => {
+        setAiLoading(true);
+        try {
+            const prompt = await callGeminiPrompt(editForm.name);
+            const imgUrl = await callGeminiImage(prompt);
+            setEditForm(prev => ({ ...prev, image: imgUrl }));
+            success("New AI Image Generated!");
+        } catch (e) {
+            error(e.message);
+        } finally {
+            setAiLoading(false);
         }
     };
 
@@ -184,14 +211,69 @@ const DomainManager = () => {
                     <div key={domain.id} className="domain-item">
                         {editingId === domain.id ? (
                             // Edit Mode
-                            <div className="edit-mode-form">
-                                <input value={editForm.name} onChange={e => setEditForm({ ...editForm, name: e.target.value })} className="admin-input" />
-                                <input type="number" value={editForm.price} onChange={e => setEditForm({ ...editForm, price: e.target.value })} className="admin-input price-input" />
+                            <div className="edit-mode-form" style={{
+                                display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '15px',
+                                background: 'rgba(255,255,255,0.05)', padding: '15px', borderRadius: '8px'
+                            }}>
+                                <div style={{ gridColumn: '1 / -1', fontWeight: 'bold' }}>Editing {domain.name}</div>
+
+                                {/* Row 1: Basic Info */}
+                                <input value={editForm.name} onChange={e => setEditForm({ ...editForm, name: e.target.value })} className="admin-input" placeholder="Name" />
+                                <input type="number" value={editForm.price} onChange={e => setEditForm({ ...editForm, price: e.target.value })} className="admin-input" placeholder="Price" />
                                 <select value={editForm.status} onChange={e => setEditForm({ ...editForm, status: e.target.value })} className="admin-input">
                                     <option>Available</option><option>Sold</option><option>Pending</option>
                                 </select>
-                                <div className="edit-actions">
-                                    <button onClick={saveEdit} className="btn btn-primary btn-sm">Save</button>
+                                <select value={editForm.category} onChange={e => setEditForm({ ...editForm, category: e.target.value })} className="admin-input">
+                                    <option value="">Select Category...</option>
+                                    {categories.map(c => <option key={c} value={c}>{c}</option>)}
+                                </select>
+
+                                {/* Row 2: Rating */}
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                    <label>Rate:</label>
+                                    <div className="star-rating" onMouseLeave={() => setEditHoverRating(0)}>
+                                        {[1, 2, 3, 4, 5].map((star) => (
+                                            <span
+                                                key={star}
+                                                className={`star ${(editHoverRating || editForm.special) >= star ? 'filled' : ''}`}
+                                                onClick={() => setEditForm({ ...editForm, special: star })}
+                                                onMouseEnter={() => setEditHoverRating(star)}
+                                                style={{ cursor: 'pointer', fontSize: '1.2rem' }}
+                                            >
+                                                ★
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Row 3: Image */}
+                                <div style={{ gridColumn: '1 / -1', display: 'flex', gap: '10px', alignItems: 'start' }}>
+                                    <div style={{ flex: 1 }}>
+                                        <input
+                                            className="admin-input"
+                                            placeholder="Image URL"
+                                            value={editForm.image}
+                                            onChange={e => setEditForm({ ...editForm, image: e.target.value })}
+                                        />
+                                    </div>
+                                    <button
+                                        className="btn btn-outline"
+                                        onClick={handleEditMagic}
+                                        disabled={aiLoading}
+                                        type="button"
+                                        title="Auto-Generate Image with AI"
+                                    >
+                                        {aiLoading ? '🤖 Generating...' : '✨ Auto-Gen Image'}
+                                    </button>
+                                    {editForm.image && (
+                                        <div style={{ width: '50px', height: '50px', borderRadius: '4px', overflow: 'hidden', border: '1px solid #ffffff33' }}>
+                                            <img src={editForm.image} alt="Pre" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                        </div>
+                                    )}
+                                </div>
+
+                                <div className="edit-actions" style={{ gridColumn: '1 / -1', display: 'flex', gap: '10px', marginTop: '10px' }}>
+                                    <button onClick={saveEdit} className="btn btn-primary btn-sm">Save Changes</button>
                                     <button onClick={cancelEdit} className="btn btn-outline btn-sm">Cancel</button>
                                 </div>
                             </div>
