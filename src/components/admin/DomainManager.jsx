@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../../firebase';
 import { collection, getDocs, deleteDoc, doc, updateDoc } from 'firebase/firestore';
+import { useToast } from '../../context/ToastContext';
 
 const DomainManager = () => {
     const [domains, setDomains] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     const [editingId, setEditingId] = useState(null);
     const [editForm, setEditForm] = useState({});
+    const { success, error } = useToast();
 
     useEffect(() => {
         fetchDomains();
@@ -19,8 +21,14 @@ const DomainManager = () => {
 
     const handleDelete = async (id) => {
         if (window.confirm("Delete this domain permanently?")) {
-            await deleteDoc(doc(db, "domains", id));
-            fetchDomains();
+            try {
+                await deleteDoc(doc(db, "domains", id));
+                success("Domain deleted successfully!");
+                fetchDomains();
+            } catch (e) {
+                console.error(e);
+                error("Failed to delete domain.");
+            }
         }
     };
 
@@ -43,9 +51,11 @@ const DomainManager = () => {
                 // category is skipped for simplicity here, but can be added
             });
             setEditingId(null);
+            success("Domain updated successfully!");
             fetchDomains();
         } catch (e) {
-            alert("Error updating");
+            console.error(e);
+            error("Error updating domain");
         }
     };
 
@@ -53,38 +63,29 @@ const DomainManager = () => {
 
     return (
         <div className="glass-panel" style={{ padding: '30px' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '20px' }}>
+            <div className="domain-manager-header">
                 <h3>Portfolio Inventory ({domains.length})</h3>
                 <input
                     type="text"
                     placeholder="Search domains..."
-                    className="admin-input"
-                    style={{ width: '300px' }}
+                    className="admin-input search-input"
                     value={searchTerm}
                     onChange={e => setSearchTerm(e.target.value)}
                 />
             </div>
 
-            <div style={{ display: 'grid', gap: '15px' }}>
+            <div className="domain-list">
                 {filtered.map(domain => (
-                    <div key={domain.id} style={{
-                        background: 'rgba(255,255,255,0.03)',
-                        padding: '15px',
-                        borderRadius: '10px',
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        alignItems: 'center',
-                        border: '1px solid var(--glass-border)'
-                    }}>
+                    <div key={domain.id} className="domain-item">
                         {editingId === domain.id ? (
                             // Edit Mode
-                            <div style={{ display: 'flex', gap: '10px', width: '100%' }}>
+                            <div className="edit-mode-form">
                                 <input value={editForm.name} onChange={e => setEditForm({ ...editForm, name: e.target.value })} className="admin-input" />
-                                <input type="number" value={editForm.price} onChange={e => setEditForm({ ...editForm, price: e.target.value })} className="admin-input" style={{ width: '100px' }} />
+                                <input type="number" value={editForm.price} onChange={e => setEditForm({ ...editForm, price: e.target.value })} className="admin-input price-input" />
                                 <select value={editForm.status} onChange={e => setEditForm({ ...editForm, status: e.target.value })} className="admin-input">
                                     <option>Available</option><option>Sold</option><option>Pending</option>
                                 </select>
-                                <div style={{ display: 'flex', gap: '5px' }}>
+                                <div className="edit-actions">
                                     <button onClick={saveEdit} className="btn btn-primary btn-sm">Save</button>
                                     <button onClick={cancelEdit} className="btn btn-outline btn-sm">Cancel</button>
                                 </div>
@@ -92,17 +93,17 @@ const DomainManager = () => {
                         ) : (
                             // View Mode
                             <>
-                                <div>
-                                    <div style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>{domain.name}</div>
-                                    <div style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
+                                <div className="domain-info">
+                                    <div className="domain-name">{domain.name}</div>
+                                    <div className="domain-meta">
                                         {domain.category} • <span className={`status-badge ${domain.status.toLowerCase()}`}>{domain.status}</span>
                                     </div>
                                 </div>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-                                    <span style={{ color: 'var(--primary)', fontWeight: 'bold' }}>${domain.price.toLocaleString()}</span>
-                                    <div style={{ display: 'flex', gap: '10px' }}>
+                                <div className="domain-actions">
+                                    <span className="domain-price">${domain.price.toLocaleString()}</span>
+                                    <div className="action-buttons">
                                         <button onClick={() => startEdit(domain)} className="btn btn-outline btn-sm">Edit</button>
-                                        <button onClick={() => handleDelete(domain.id)} className="btn btn-outline btn-sm" style={{ borderColor: '#ff4444', color: '#ff4444' }}>Delete</button>
+                                        <button onClick={() => handleDelete(domain.id)} className="btn btn-outline btn-sm delete-btn">Delete</button>
                                     </div>
                                 </div>
                             </>

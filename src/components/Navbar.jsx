@@ -7,6 +7,8 @@ const Navbar = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
     useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 50);
@@ -17,6 +19,7 @@ const Navbar = () => {
 
     const handleNavClick = (e, targetId) => {
         e.preventDefault();
+        setMobileMenuOpen(false); // Close menu on click
 
         if (location.pathname === '/') {
             const element = document.querySelector(targetId);
@@ -34,7 +37,12 @@ const Navbar = () => {
                 <Link to="/" className="logo" style={{ textDecoration: 'none', color: 'inherit' }}>
                     Domain<span className="highlight">Bags</span>
                 </Link>
-                <ul className="nav-links">
+
+                <div className="mobile-toggle" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+                    {mobileMenuOpen ? '✕' : '☰'}
+                </div>
+
+                <ul className={`nav-links ${mobileMenuOpen ? 'active' : ''}`}>
                     <li><a href="#hero" onClick={(e) => handleNavClick(e, '#hero')}>Home</a></li>
                     <li><a href="#about" onClick={(e) => handleNavClick(e, '#about')}>About</a></li>
                     <li><a href="#portfolio" onClick={(e) => handleNavClick(e, '#portfolio')}>Domains</a></li>

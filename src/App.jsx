@@ -45,24 +45,28 @@ const HomePage = () => {
   );
 };
 
+import { ToastProvider } from './context/ToastContext';
+
 function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms-of-service" element={<TermsOfService />} />
-          <Route path="/login" element={<Login />} />
-          <Route
-            path="/admin"
-            element={
-              <PrivateRoute>
-                <Admin />
-              </PrivateRoute>
-            }
-          />
-        </Routes>
+        <ToastProvider>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="/login" element={<Login />} />
+            <Route
+              path="/admin"
+              element={
+                <PrivateRoute>
+                  <Admin />
+                </PrivateRoute>
+              }
+            />
+          </Routes>
+        </ToastProvider>
       </AuthProvider>
     </BrowserRouter>
   );

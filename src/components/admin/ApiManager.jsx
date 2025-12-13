@@ -79,7 +79,7 @@ const ApiManager = () => {
                         onChange={(e) => setModelName(e.target.value)}
                     />
                     <small style={{ color: 'var(--text-muted)' }}>
-                        Use <code>gemini-2.5-flash-image</code> or <code>imagen-3.0-generate-001</code>.
+                        Default: <code>gemini-2.5-flash-image</code> (Nano Banana).
                     </small>
                 </div>
 
