@@ -13,6 +13,7 @@ import Login from './pages/Login';
 import Admin from './pages/Admin';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
+import DomainAnalysis from './pages/DomainAnalysis';
 
 const PrivateRoute = ({ children }) => {
   const { currentUser } = useAuth();
@@ -65,6 +66,7 @@ function App() {
                 </PrivateRoute>
               }
             />
+            <Route path="/analyse-domain" element={<DomainAnalysis />} />
           </Routes>
         </ToastProvider>
       </AuthProvider>

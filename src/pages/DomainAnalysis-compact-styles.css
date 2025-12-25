@@ -1,0 +1,39 @@
+/* Compact TLD Grid for Registered Domains */
+.tld-grid-compact {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.tld-badge-compact {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #ef4444;
+    text-align: center;
+    font-family: 'Monaco', 'Consolas', monospace;
+    transition: all 0.2s;
+}
+
+.tld-badge-compact:hover {
+    background: rgba(15, 23, 42, 0.8);
+    border-color: rgba(239, 68, 68, 0.6);
+    transform: translateY(-2px);
+}
+
+.tld-badge-compact.tld-remaining {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: rgba(59, 130, 246, 0.4);
+    color: #60a5fa;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.tld-badge-compact.tld-remaining:hover {
+    background: rgba(59, 130, 246, 0.2);
+    border-color: rgba(59, 130, 246, 0.6);
+}

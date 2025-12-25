@@ -1,0 +1,393 @@
+@import './DomainAnalysis-compact-styles.css';
+@import './DomainAnalysis-tld-results.css';
+@import './DomainAnalysis-extension-filter.css';
+
+.domain-analysis-container {
+    min-height: 100vh;
+    background-color: #0f172a;
+    color: #f8fafc;
+    padding-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.analysis-card {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 3rem;
+    width: 95%;
+    max-width: 1400px;
+    margin: 2rem auto;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.analysis-title {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #60a5fa 0%, #c084fc 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+}
+
+/* Upload & Filter UI */
+.upload-section {
+    border: 2px dashed rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 4rem 2rem;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-bottom: 3rem;
+    cursor: pointer;
+    background: rgba(15, 23, 42, 0.3);
+}
+
+.upload-section:hover,
+.upload-section.drag-active {
+    border-color: #60a5fa;
+    background: rgba(96, 165, 250, 0.05);
+    transform: scale(1.005);
+}
+
+.upload-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 0 10px rgba(96, 165, 250, 0.3));
+}
+
+.upload-text {
+    color: #94a3b8;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.file-input {
+    display: none;
+}
+
+.btn-select-file {
+    background: linear-gradient(to right, #3b82f6, #2563eb);
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 9999px;
+    border: none;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.5);
+}
+
+.btn-select-file:hover {
+    box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.6);
+    transform: translateY(-2px);
+}
+
+.filter-options {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 2rem;
+    background: rgba(30, 41, 59, 0.4);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    color: #e2e8f0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.checkbox-label input {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.stats-row {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 2.5rem;
+    justify-content: center;
+    background: rgba(15, 23, 42, 0.3);
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+.search-container {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.search-input {
+    width: 100%;
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1rem 3rem 1rem 1.5rem;
+    color: #e2e8f0;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #60a5fa;
+    background: rgba(30, 41, 59, 0.6);
+}
+
+.search-input::placeholder {
+    color: #64748b;
+}
+
+.search-clear {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border: none;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.search-clear:hover {
+    background: #ef4444;
+    color: white;
+}
+
+/* Virtualized List Container - Needs specific height for AutoSizer to work nicely */
+.domains-list-virtualized {
+    height: 600px;
+    /* Fixed height for the scrollable area */
+    width: 100%;
+    margin-bottom: 3rem;
+    background: transparent;
+    /* Border or background can go here if needed */
+}
+
+/* Styles for visual gap simulation */
+.domain-item-container {
+    padding-bottom: 0.75rem;
+    /* This creates the gap */
+    height: 100%;
+    box-sizing: border-box;
+    padding-right: 0.5rem;
+    /* Space for scrollbar */
+}
+
+/* Domain Row Wrapper - adds spacing between rows */
+.domain-row-wrapper {
+    margin-bottom: 1.5rem;
+}
+
+.domain-item {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.5), rgba(15, 23, 42, 0.5));
+    border: 1px solid rgba(100, 116, 139, 0.2);
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.domain-item:hover {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.7));
+    border-color: rgba(96, 165, 250, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.domain-name {
+    color: #e2e8f0;
+    font-family: 'Outfit', 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    letter-spacing: 0.02em;
+}
+
+.btn-check-tld {
+    background: rgba(59, 130, 246, 0.1);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    padding: 0.6rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.btn-check-tld:hover {
+    background: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+    box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
+}
+
+.no-results-message {
+    text-align: center;
+    color: #64748b;
+    font-size: 1.1rem;
+    margin-top: 3rem;
+}
+
+.action-row {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.btn-analyze {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    padding: 1rem 3rem;
+    border-radius: 12px;
+    border: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.4);
+    transition: all 0.2s;
+}
+
+.btn-analyze:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.5);
+}
+
+.btn-reset {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #cbd5e1;
+    padding: 1rem 3rem;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.2s;
+}
+
+.btn-reset:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+    padding: 1rem;
+    background: rgba(30, 41, 59, 0.3);
+    border-radius: 12px;
+    flex-wrap: wrap;
+}
+
+.page-size-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #e2e8f0;
+    font-size: 0.9rem;
+}
+
+.page-size-select {
+    background: rgba(30, 41, 59, 0.8);
+    color: #e2e8f0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-page {
+    background: rgba(59, 130, 246, 0.1);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+    min-width: 50px;
+}
+
+.btn-page:hover:not(:disabled) {
+    background: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+}
+
+.btn-page:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.page-info {
+    color: #e2e8f0;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.no-results-message {
+    text-align: center;
+    color: #64748b;
+    font-size: 1.1rem;
+    padding: 3rem;
+}

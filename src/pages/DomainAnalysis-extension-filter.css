@@ -1,0 +1,191 @@
+/* Extension Filter Dropdown Styles */
+.extension-filter-dropdown {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.extension-dropdown-toggle {
+    width: 100%;
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(100, 116, 139, 0.3);
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #e2e8f0;
+}
+
+.extension-dropdown-toggle:hover {
+    background: rgba(30, 41, 59, 0.7);
+    border-color: rgba(100, 116, 139, 0.5);
+}
+
+.dropdown-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.dropdown-selected-count {
+    margin-left: auto;
+    font-size: 0.85rem;
+    color: #60a5fa;
+    font-weight: 600;
+}
+
+.dropdown-arrow {
+    font-size: 0.75rem;
+    color: #94a3b8;
+}
+
+.extension-dropdown-content {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    right: 0;
+    background: rgba(15, 23, 42, 0.98);
+    border: 1px solid rgba(100, 116, 139, 0.3);
+    border-radius: 12px;
+    padding: 1rem;
+    z-index: 1000;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    max-height: 400px;
+    overflow-y: auto;
+    animation: dropdownSlide 0.2s ease-out;
+}
+
+@keyframes dropdownSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(100, 116, 139, 0.2);
+}
+
+.btn-select-all-ext,
+.btn-clear-all-ext {
+    flex: 1;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    color: #60a5fa;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-select-all-ext:hover {
+    background: rgba(59, 130, 246, 0.2);
+    border-color: rgba(59, 130, 246, 0.5);
+}
+
+.btn-clear-all-ext {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.3);
+    color: #f87171;
+}
+
+.btn-clear-all-ext:hover {
+    background: rgba(239, 68, 68, 0.2);
+    border-color: rgba(239, 68, 68, 0.5);
+}
+
+.extension-chips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.5rem;
+}
+
+.extension-checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 0.75rem;
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(100, 116, 139, 0.2);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+}
+
+.extension-checkbox-item:hover {
+    background: rgba(30, 41, 59, 0.8);
+    border-color: rgba(100, 116, 139, 0.4);
+}
+
+.extension-checkbox-item.selected {
+    background: rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.5);
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.2);
+}
+
+.extension-checkbox {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: #3b82f6;
+}
+
+.extension-name {
+    flex: 1;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: #e2e8f0;
+    font-family: 'Monaco', 'Consolas', monospace;
+}
+
+.extension-checkbox-item.selected .extension-name {
+    color: #60a5fa;
+}
+
+.extension-count {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    min-width: 2rem;
+    text-align: center;
+}
+
+.extension-checkbox-item.selected .extension-count {
+    color: #bfdbfe;
+    background: rgba(59, 130, 246, 0.2);
+}
+
+/* Custom scrollbar for dropdown */
+.extension-dropdown-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.extension-dropdown-content::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.5);
+    border-radius: 4px;
+}
+
+.extension-dropdown-content::-webkit-scrollbar-thumb {
+    background: rgba(100, 116, 139, 0.5);
+    border-radius: 4px;
+}
+
+.extension-dropdown-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(100, 116, 139, 0.7);
+}

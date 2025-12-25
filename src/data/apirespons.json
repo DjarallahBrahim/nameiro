@@ -1,0 +1,5866 @@
+{
+    "categories": {
+        "gTLD": [
+            {
+                "tld": "com",
+                "domain": "ayashaborealis.com",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "gTLD"
+            },
+            {
+                "tld": "org",
+                "domain": "ayashaborealis.org",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "gTLD"
+            },
+            {
+                "tld": "net",
+                "domain": "ayashaborealis.net",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "gTLD"
+            },
+            {
+                "tld": "biz",
+                "domain": "ayashaborealis.biz",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "gTLD"
+            },
+            {
+                "tld": "info",
+                "domain": "ayashaborealis.info",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "gTLD"
+            },
+            {
+                "tld": "pro",
+                "domain": "ayashaborealis.pro",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "gTLD"
+            },
+            {
+                "tld": "tel",
+                "domain": "ayashaborealis.tel",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "gTLD"
+            },
+            {
+                "tld": "name",
+                "domain": "ayashaborealis.name",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "gTLD"
+            },
+            {
+                "tld": "app",
+                "domain": "ayashaborealis.app",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "gTLD"
+            },
+            {
+                "tld": "dev",
+                "domain": "ayashaborealis.dev",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "gTLD"
+            },
+            {
+                "tld": "mobi",
+                "domain": "ayashaborealis.mobi",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "gTLD"
+            },
+            {
+                "tld": "travel",
+                "domain": "ayashaborealis.travel",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "gTLD"
+            },
+            {
+                "tld": "jobs",
+                "domain": "ayashaborealis.jobs",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "gTLD"
+            },
+            {
+                "tld": "xxx",
+                "domain": "ayashaborealis.xxx",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "gTLD"
+            },
+            {
+                "tld": "pw",
+                "domain": "ayashaborealis.pw",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "gTLD"
+            },
+            {
+                "tld": "email",
+                "domain": "ayashaborealis.email",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "gTLD"
+            }
+        ],
+        "ccTLD": [
+            {
+                "tld": "ai",
+                "domain": "ayashaborealis.ai",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "au",
+                "domain": "ayashaborealis.au",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "br",
+                "domain": "ayashaborealis.br",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ca",
+                "domain": "ayashaborealis.ca",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "cn",
+                "domain": "ayashaborealis.cn",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "co",
+                "domain": "ayashaborealis.co",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "cz",
+                "domain": "ayashaborealis.cz",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "de",
+                "domain": "ayashaborealis.de",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "dk",
+                "domain": "ayashaborealis.dk",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "es",
+                "domain": "ayashaborealis.es",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "fi",
+                "domain": "ayashaborealis.fi",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "fr",
+                "domain": "ayashaborealis.fr",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "in",
+                "domain": "ayashaborealis.in",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "io",
+                "domain": "ayashaborealis.io",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "it",
+                "domain": "ayashaborealis.it",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "jp",
+                "domain": "ayashaborealis.jp",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ly",
+                "domain": "ayashaborealis.ly",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "me",
+                "domain": "ayashaborealis.me",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "mx",
+                "domain": "ayashaborealis.mx",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "nl",
+                "domain": "ayashaborealis.nl",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "no",
+                "domain": "ayashaborealis.no",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "pl",
+                "domain": "ayashaborealis.pl",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ru",
+                "domain": "ayashaborealis.ru",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "se",
+                "domain": "ayashaborealis.se",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "uk",
+                "domain": "ayashaborealis.uk",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "us",
+                "domain": "ayashaborealis.us",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ac",
+                "domain": "ayashaborealis.ac",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ad",
+                "domain": "ayashaborealis.ad",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ae",
+                "domain": "ayashaborealis.ae",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "af",
+                "domain": "ayashaborealis.af",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ag",
+                "domain": "ayashaborealis.ag",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "al",
+                "domain": "ayashaborealis.al",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "am",
+                "domain": "ayashaborealis.am",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ao",
+                "domain": "ayashaborealis.ao",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "aq",
+                "domain": "ayashaborealis.aq",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ar",
+                "domain": "ayashaborealis.ar",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "as",
+                "domain": "ayashaborealis.as",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "at",
+                "domain": "ayashaborealis.at",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "aw",
+                "domain": "ayashaborealis.aw",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ax",
+                "domain": "ayashaborealis.ax",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "az",
+                "domain": "ayashaborealis.az",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ba",
+                "domain": "ayashaborealis.ba",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "bb",
+                "domain": "ayashaborealis.bb",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "bd",
+                "domain": "ayashaborealis.bd",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "be",
+                "domain": "ayashaborealis.be",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "bf",
+                "domain": "ayashaborealis.bf",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "bg",
+                "domain": "ayashaborealis.bg",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "bh",
+                "domain": "ayashaborealis.bh",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "bi",
+                "domain": "ayashaborealis.bi",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "bj",
+                "domain": "ayashaborealis.bj",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "bl",
+                "domain": "ayashaborealis.bl",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "bm",
+                "domain": "ayashaborealis.bm",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "bn",
+                "domain": "ayashaborealis.bn",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "bo",
+                "domain": "ayashaborealis.bo",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "bq",
+                "domain": "ayashaborealis.bq",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "bs",
+                "domain": "ayashaborealis.bs",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "bt",
+                "domain": "ayashaborealis.bt",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "bv",
+                "domain": "ayashaborealis.bv",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "bw",
+                "domain": "ayashaborealis.bw",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "by",
+                "domain": "ayashaborealis.by",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "bz",
+                "domain": "ayashaborealis.bz",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "cc",
+                "domain": "ayashaborealis.cc",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "cd",
+                "domain": "ayashaborealis.cd",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "cf",
+                "domain": "ayashaborealis.cf",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "cg",
+                "domain": "ayashaborealis.cg",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ch",
+                "domain": "ayashaborealis.ch",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ci",
+                "domain": "ayashaborealis.ci",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ck",
+                "domain": "ayashaborealis.ck",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "cl",
+                "domain": "ayashaborealis.cl",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "cm",
+                "domain": "ayashaborealis.cm",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "cr",
+                "domain": "ayashaborealis.cr",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "cu",
+                "domain": "ayashaborealis.cu",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "cv",
+                "domain": "ayashaborealis.cv",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "cw",
+                "domain": "ayashaborealis.cw",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "cx",
+                "domain": "ayashaborealis.cx",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "cy",
+                "domain": "ayashaborealis.cy",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "dj",
+                "domain": "ayashaborealis.dj",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "dm",
+                "domain": "ayashaborealis.dm",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "do",
+                "domain": "ayashaborealis.do",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "dz",
+                "domain": "ayashaborealis.dz",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ec",
+                "domain": "ayashaborealis.ec",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ee",
+                "domain": "ayashaborealis.ee",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "eg",
+                "domain": "ayashaborealis.eg",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "eh",
+                "domain": "ayashaborealis.eh",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "er",
+                "domain": "ayashaborealis.er",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "et",
+                "domain": "ayashaborealis.et",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "eu",
+                "domain": "ayashaborealis.eu",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "fj",
+                "domain": "ayashaborealis.fj",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "fk",
+                "domain": "ayashaborealis.fk",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "fm",
+                "domain": "ayashaborealis.fm",
+                "registered": false,
+                "method": "dns_failed",
+                "errors": [
+                    "wildcard_dns_inconclusive",
+                    "wildcard_dns_inconclusive",
+                    "wildcard_dns_inconclusive"
+                ],
+                "category": "ccTLD"
+            },
+            {
+                "tld": "fo",
+                "domain": "ayashaborealis.fo",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ga",
+                "domain": "ayashaborealis.ga",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "gb",
+                "domain": "ayashaborealis.gb",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "gd",
+                "domain": "ayashaborealis.gd",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ge",
+                "domain": "ayashaborealis.ge",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "gf",
+                "domain": "ayashaborealis.gf",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "gg",
+                "domain": "ayashaborealis.gg",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "gh",
+                "domain": "ayashaborealis.gh",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "gi",
+                "domain": "ayashaborealis.gi",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "gl",
+                "domain": "ayashaborealis.gl",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "gm",
+                "domain": "ayashaborealis.gm",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "gn",
+                "domain": "ayashaborealis.gn",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "gp",
+                "domain": "ayashaborealis.gp",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "gq",
+                "domain": "ayashaborealis.gq",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "gr",
+                "domain": "ayashaborealis.gr",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "gs",
+                "domain": "ayashaborealis.gs",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "gt",
+                "domain": "ayashaborealis.gt",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "gu",
+                "domain": "ayashaborealis.gu",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "gw",
+                "domain": "ayashaborealis.gw",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "gy",
+                "domain": "ayashaborealis.gy",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "hk",
+                "domain": "ayashaborealis.hk",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "hm",
+                "domain": "ayashaborealis.hm",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "hn",
+                "domain": "ayashaborealis.hn",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "hr",
+                "domain": "ayashaborealis.hr",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ht",
+                "domain": "ayashaborealis.ht",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "hu",
+                "domain": "ayashaborealis.hu",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "id",
+                "domain": "ayashaborealis.id",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ie",
+                "domain": "ayashaborealis.ie",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "il",
+                "domain": "ayashaborealis.il",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "im",
+                "domain": "ayashaborealis.im",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "iq",
+                "domain": "ayashaborealis.iq",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ir",
+                "domain": "ayashaborealis.ir",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "is",
+                "domain": "ayashaborealis.is",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "je",
+                "domain": "ayashaborealis.je",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "jm",
+                "domain": "ayashaborealis.jm",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "jo",
+                "domain": "ayashaborealis.jo",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ke",
+                "domain": "ayashaborealis.ke",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "kg",
+                "domain": "ayashaborealis.kg",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "kh",
+                "domain": "ayashaborealis.kh",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ki",
+                "domain": "ayashaborealis.ki",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "km",
+                "domain": "ayashaborealis.km",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "kn",
+                "domain": "ayashaborealis.kn",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "kp",
+                "domain": "ayashaborealis.kp",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "kr",
+                "domain": "ayashaborealis.kr",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "kw",
+                "domain": "ayashaborealis.kw",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ky",
+                "domain": "ayashaborealis.ky",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "kz",
+                "domain": "ayashaborealis.kz",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "la",
+                "domain": "ayashaborealis.la",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "lb",
+                "domain": "ayashaborealis.lb",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "lc",
+                "domain": "ayashaborealis.lc",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "li",
+                "domain": "ayashaborealis.li",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "lk",
+                "domain": "ayashaborealis.lk",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "lr",
+                "domain": "ayashaborealis.lr",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ls",
+                "domain": "ayashaborealis.ls",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "lt",
+                "domain": "ayashaborealis.lt",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "lu",
+                "domain": "ayashaborealis.lu",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "lv",
+                "domain": "ayashaborealis.lv",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ma",
+                "domain": "ayashaborealis.ma",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "mc",
+                "domain": "ayashaborealis.mc",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "md",
+                "domain": "ayashaborealis.md",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "mf",
+                "domain": "ayashaborealis.mf",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "mg",
+                "domain": "ayashaborealis.mg",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "mh",
+                "domain": "ayashaborealis.mh",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "mk",
+                "domain": "ayashaborealis.mk",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ml",
+                "domain": "ayashaborealis.ml",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "mm",
+                "domain": "ayashaborealis.mm",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "mn",
+                "domain": "ayashaborealis.mn",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "mo",
+                "domain": "ayashaborealis.mo",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "mp",
+                "domain": "ayashaborealis.mp",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "mq",
+                "domain": "ayashaborealis.mq",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "mr",
+                "domain": "ayashaborealis.mr",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ms",
+                "domain": "ayashaborealis.ms",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "mt",
+                "domain": "ayashaborealis.mt",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "mu",
+                "domain": "ayashaborealis.mu",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "mv",
+                "domain": "ayashaborealis.mv",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "mw",
+                "domain": "ayashaborealis.mw",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "my",
+                "domain": "ayashaborealis.my",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "mz",
+                "domain": "ayashaborealis.mz",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "na",
+                "domain": "ayashaborealis.na",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "nc",
+                "domain": "ayashaborealis.nc",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ne",
+                "domain": "ayashaborealis.ne",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "nf",
+                "domain": "ayashaborealis.nf",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ng",
+                "domain": "ayashaborealis.ng",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ni",
+                "domain": "ayashaborealis.ni",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "np",
+                "domain": "ayashaborealis.np",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "nr",
+                "domain": "ayashaborealis.nr",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "nu",
+                "domain": "ayashaborealis.nu",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "nz",
+                "domain": "ayashaborealis.nz",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "om",
+                "domain": "ayashaborealis.om",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "pa",
+                "domain": "ayashaborealis.pa",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "pe",
+                "domain": "ayashaborealis.pe",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "pf",
+                "domain": "ayashaborealis.pf",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "pg",
+                "domain": "ayashaborealis.pg",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ph",
+                "domain": "ayashaborealis.ph",
+                "registered": false,
+                "method": "dns_failed_whois_unavailable",
+                "errors": [
+                    "wildcard_dns_inconclusive",
+                    "wildcard_dns_inconclusive",
+                    "wildcard_dns_inconclusive"
+                ],
+                "category": "ccTLD"
+            },
+            {
+                "tld": "pk",
+                "domain": "ayashaborealis.pk",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "pm",
+                "domain": "ayashaborealis.pm",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "pn",
+                "domain": "ayashaborealis.pn",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "pr",
+                "domain": "ayashaborealis.pr",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ps",
+                "domain": "ayashaborealis.ps",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "pt",
+                "domain": "ayashaborealis.pt",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "pw",
+                "domain": "ayashaborealis.pw",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "py",
+                "domain": "ayashaborealis.py",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "qa",
+                "domain": "ayashaborealis.qa",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "re",
+                "domain": "ayashaborealis.re",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ro",
+                "domain": "ayashaborealis.ro",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "rs",
+                "domain": "ayashaborealis.rs",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "rw",
+                "domain": "ayashaborealis.rw",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "sa",
+                "domain": "ayashaborealis.sa",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "sb",
+                "domain": "ayashaborealis.sb",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "sc",
+                "domain": "ayashaborealis.sc",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "sd",
+                "domain": "ayashaborealis.sd",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "sg",
+                "domain": "ayashaborealis.sg",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "sh",
+                "domain": "ayashaborealis.sh",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "si",
+                "domain": "ayashaborealis.si",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "sj",
+                "domain": "ayashaborealis.sj",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "sk",
+                "domain": "ayashaborealis.sk",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "sl",
+                "domain": "ayashaborealis.sl",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "sm",
+                "domain": "ayashaborealis.sm",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "sn",
+                "domain": "ayashaborealis.sn",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "so",
+                "domain": "ayashaborealis.so",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "sr",
+                "domain": "ayashaborealis.sr",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ss",
+                "domain": "ayashaborealis.ss",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "st",
+                "domain": "ayashaborealis.st",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "su",
+                "domain": "ayashaborealis.su",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "sv",
+                "domain": "ayashaborealis.sv",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "sx",
+                "domain": "ayashaborealis.sx",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "sy",
+                "domain": "ayashaborealis.sy",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "sz",
+                "domain": "ayashaborealis.sz",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "tc",
+                "domain": "ayashaborealis.tc",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "td",
+                "domain": "ayashaborealis.td",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "tf",
+                "domain": "ayashaborealis.tf",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "tg",
+                "domain": "ayashaborealis.tg",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "th",
+                "domain": "ayashaborealis.th",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "tj",
+                "domain": "ayashaborealis.tj",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "tk",
+                "domain": "ayashaborealis.tk",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "tl",
+                "domain": "ayashaborealis.tl",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "tm",
+                "domain": "ayashaborealis.tm",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "tn",
+                "domain": "ayashaborealis.tn",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "to",
+                "domain": "ayashaborealis.to",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "tp",
+                "domain": "ayashaborealis.tp",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "tr",
+                "domain": "ayashaborealis.tr",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "tt",
+                "domain": "ayashaborealis.tt",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "tv",
+                "domain": "ayashaborealis.tv",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "tw",
+                "domain": "ayashaborealis.tw",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "tz",
+                "domain": "ayashaborealis.tz",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ua",
+                "domain": "ayashaborealis.ua",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ug",
+                "domain": "ayashaborealis.ug",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "um",
+                "domain": "ayashaborealis.um",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "uy",
+                "domain": "ayashaborealis.uy",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "uz",
+                "domain": "ayashaborealis.uz",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "va",
+                "domain": "ayashaborealis.va",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "vc",
+                "domain": "ayashaborealis.vc",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ve",
+                "domain": "ayashaborealis.ve",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "vg",
+                "domain": "ayashaborealis.vg",
+                "registered": false,
+                "method": "dns_failed_whois_unavailable",
+                "errors": [
+                    "wildcard_dns_inconclusive",
+                    "wildcard_dns_inconclusive",
+                    "wildcard_dns_inconclusive"
+                ],
+                "category": "ccTLD"
+            },
+            {
+                "tld": "vi",
+                "domain": "ayashaborealis.vi",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "vn",
+                "domain": "ayashaborealis.vn",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "vu",
+                "domain": "ayashaborealis.vu",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "wf",
+                "domain": "ayashaborealis.wf",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ws",
+                "domain": "ayashaborealis.ws",
+                "registered": false,
+                "method": "dns_failed_whois_unavailable",
+                "errors": [
+                    "wildcard_dns_inconclusive",
+                    "wildcard_dns_inconclusive",
+                    "wildcard_dns_inconclusive"
+                ],
+                "category": "ccTLD"
+            },
+            {
+                "tld": "ye",
+                "domain": "ayashaborealis.ye",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "yt",
+                "domain": "ayashaborealis.yt",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "yu",
+                "domain": "ayashaborealis.yu",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "za",
+                "domain": "ayashaborealis.za",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "zm",
+                "domain": "ayashaborealis.zm",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            },
+            {
+                "tld": "zw",
+                "domain": "ayashaborealis.zw",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ccTLD"
+            }
+        ],
+        "secondLevelTLD": [
+            {
+                "tld": "co.uk",
+                "domain": "ayashaborealis.co.uk",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "secondLevelTLD"
+            },
+            {
+                "tld": "com.au",
+                "domain": "ayashaborealis.com.au",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "secondLevelTLD"
+            },
+            {
+                "tld": "org.uk",
+                "domain": "ayashaborealis.org.uk",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "secondLevelTLD"
+            },
+            {
+                "tld": "net.au",
+                "domain": "ayashaborealis.net.au",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "secondLevelTLD"
+            },
+            {
+                "tld": "co.nz",
+                "domain": "ayashaborealis.co.nz",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "secondLevelTLD"
+            },
+            {
+                "tld": "co.za",
+                "domain": "ayashaborealis.co.za",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "secondLevelTLD"
+            },
+            {
+                "tld": "com.br",
+                "domain": "ayashaborealis.com.br",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "secondLevelTLD"
+            },
+            {
+                "tld": "co.jp",
+                "domain": "ayashaborealis.co.jp",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "secondLevelTLD"
+            },
+            {
+                "tld": "edu.au",
+                "domain": "ayashaborealis.edu.au",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "secondLevelTLD"
+            },
+            {
+                "tld": "gov.au",
+                "domain": "ayashaborealis.gov.au",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "secondLevelTLD"
+            },
+            {
+                "tld": "org.nz",
+                "domain": "ayashaborealis.org.nz",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "secondLevelTLD"
+            },
+            {
+                "tld": "net.nz",
+                "domain": "ayashaborealis.net.nz",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "secondLevelTLD"
+            },
+            {
+                "tld": "org.za",
+                "domain": "ayashaborealis.org.za",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "secondLevelTLD"
+            },
+            {
+                "tld": "net.za",
+                "domain": "ayashaborealis.net.za",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "secondLevelTLD"
+            },
+            {
+                "tld": "org.br",
+                "domain": "ayashaborealis.org.br",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "secondLevelTLD"
+            },
+            {
+                "tld": "net.br",
+                "domain": "ayashaborealis.net.br",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "secondLevelTLD"
+            },
+            {
+                "tld": "or.jp",
+                "domain": "ayashaborealis.or.jp",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "secondLevelTLD"
+            },
+            {
+                "tld": "ne.jp",
+                "domain": "ayashaborealis.ne.jp",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "secondLevelTLD"
+            }
+        ],
+        "ngTLD": [
+            {
+                "tld": "online",
+                "domain": "ayashaborealis.online",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "tech",
+                "domain": "ayashaborealis.tech",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "travel",
+                "domain": "ayashaborealis.travel",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "xyz",
+                "domain": "ayashaborealis.xyz",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "academy",
+                "domain": "ayashaborealis.academy",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "accountant",
+                "domain": "ayashaborealis.accountant",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "accountants",
+                "domain": "ayashaborealis.accountants",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "actor",
+                "domain": "ayashaborealis.actor",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "adult",
+                "domain": "ayashaborealis.adult",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "agency",
+                "domain": "ayashaborealis.agency",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "airforce",
+                "domain": "ayashaborealis.airforce",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "apartments",
+                "domain": "ayashaborealis.apartments",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "archi",
+                "domain": "ayashaborealis.archi",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "army",
+                "domain": "ayashaborealis.army",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "art",
+                "domain": "ayashaborealis.art",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "associates",
+                "domain": "ayashaborealis.associates",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "attorney",
+                "domain": "ayashaborealis.attorney",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "auction",
+                "domain": "ayashaborealis.auction",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "audio",
+                "domain": "ayashaborealis.audio",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "auto",
+                "domain": "ayashaborealis.auto",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "autos",
+                "domain": "ayashaborealis.autos",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "baby",
+                "domain": "ayashaborealis.baby",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "band",
+                "domain": "ayashaborealis.band",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "bar",
+                "domain": "ayashaborealis.bar",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "bargains",
+                "domain": "ayashaborealis.bargains",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "basketball",
+                "domain": "ayashaborealis.basketball",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "beauty",
+                "domain": "ayashaborealis.beauty",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "beer",
+                "domain": "ayashaborealis.beer",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "best",
+                "domain": "ayashaborealis.best",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "bet",
+                "domain": "ayashaborealis.bet",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "bible",
+                "domain": "ayashaborealis.bible",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "bid",
+                "domain": "ayashaborealis.bid",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "bike",
+                "domain": "ayashaborealis.bike",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "bingo",
+                "domain": "ayashaborealis.bingo",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "bio",
+                "domain": "ayashaborealis.bio",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "black",
+                "domain": "ayashaborealis.black",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "blackfriday",
+                "domain": "ayashaborealis.blackfriday",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "blog",
+                "domain": "ayashaborealis.blog",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "blue",
+                "domain": "ayashaborealis.blue",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "boats",
+                "domain": "ayashaborealis.boats",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "bond",
+                "domain": "ayashaborealis.bond",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "boutique",
+                "domain": "ayashaborealis.boutique",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "broker",
+                "domain": "ayashaborealis.broker",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "build",
+                "domain": "ayashaborealis.build",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "builders",
+                "domain": "ayashaborealis.builders",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "business",
+                "domain": "ayashaborealis.business",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "buzz",
+                "domain": "ayashaborealis.buzz",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "cab",
+                "domain": "ayashaborealis.cab",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "cafe",
+                "domain": "ayashaborealis.cafe",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "cam",
+                "domain": "ayashaborealis.cam",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "camera",
+                "domain": "ayashaborealis.camera",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "camp",
+                "domain": "ayashaborealis.camp",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "capital",
+                "domain": "ayashaborealis.capital",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "car",
+                "domain": "ayashaborealis.car",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "cards",
+                "domain": "ayashaborealis.cards",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "care",
+                "domain": "ayashaborealis.care",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "career",
+                "domain": "ayashaborealis.career",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "careers",
+                "domain": "ayashaborealis.careers",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "cars",
+                "domain": "ayashaborealis.cars",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "casa",
+                "domain": "ayashaborealis.casa",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "cash",
+                "domain": "ayashaborealis.cash",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "casino",
+                "domain": "ayashaborealis.casino",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "catering",
+                "domain": "ayashaborealis.catering",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "center",
+                "domain": "ayashaborealis.center",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "ceo",
+                "domain": "ayashaborealis.ceo",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "cfd",
+                "domain": "ayashaborealis.cfd",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "charity",
+                "domain": "ayashaborealis.charity",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "chat",
+                "domain": "ayashaborealis.chat",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "cheap",
+                "domain": "ayashaborealis.cheap",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "christmas",
+                "domain": "ayashaborealis.christmas",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "church",
+                "domain": "ayashaborealis.church",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "city",
+                "domain": "ayashaborealis.city",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "claims",
+                "domain": "ayashaborealis.claims",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "cleaning",
+                "domain": "ayashaborealis.cleaning",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "click",
+                "domain": "ayashaborealis.click",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "clinic",
+                "domain": "ayashaborealis.clinic",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "clothing",
+                "domain": "ayashaborealis.clothing",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "club",
+                "domain": "ayashaborealis.club",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "coach",
+                "domain": "ayashaborealis.coach",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "codes",
+                "domain": "ayashaborealis.codes",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "coffee",
+                "domain": "ayashaborealis.coffee",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "college",
+                "domain": "ayashaborealis.college",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "community",
+                "domain": "ayashaborealis.community",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "company",
+                "domain": "ayashaborealis.company",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "computer",
+                "domain": "ayashaborealis.computer",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "condos",
+                "domain": "ayashaborealis.condos",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "construction",
+                "domain": "ayashaborealis.construction",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "consulting",
+                "domain": "ayashaborealis.consulting",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "contact",
+                "domain": "ayashaborealis.contact",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "contractors",
+                "domain": "ayashaborealis.contractors",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "cooking",
+                "domain": "ayashaborealis.cooking",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "cool",
+                "domain": "ayashaborealis.cool",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "country",
+                "domain": "ayashaborealis.country",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "coupons",
+                "domain": "ayashaborealis.coupons",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "credit",
+                "domain": "ayashaborealis.credit",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "creditcard",
+                "domain": "ayashaborealis.creditcard",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "cricket",
+                "domain": "ayashaborealis.cricket",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "cruises",
+                "domain": "ayashaborealis.cruises",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "cymru",
+                "domain": "ayashaborealis.cymru",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "cyou",
+                "domain": "ayashaborealis.cyou",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "dance",
+                "domain": "ayashaborealis.dance",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "date",
+                "domain": "ayashaborealis.date",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "dating",
+                "domain": "ayashaborealis.dating",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "dealer",
+                "domain": "ayashaborealis.dealer",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "deals",
+                "domain": "ayashaborealis.deals",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "degree",
+                "domain": "ayashaborealis.degree",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "delivery",
+                "domain": "ayashaborealis.delivery",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "democrat",
+                "domain": "ayashaborealis.democrat",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "dental",
+                "domain": "ayashaborealis.dental",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "dentist",
+                "domain": "ayashaborealis.dentist",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "desi",
+                "domain": "ayashaborealis.desi",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "design",
+                "domain": "ayashaborealis.design",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "diamonds",
+                "domain": "ayashaborealis.diamonds",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "diet",
+                "domain": "ayashaborealis.diet",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "digital",
+                "domain": "ayashaborealis.digital",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "direct",
+                "domain": "ayashaborealis.direct",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "directory",
+                "domain": "ayashaborealis.directory",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "discount",
+                "domain": "ayashaborealis.discount",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "diy",
+                "domain": "ayashaborealis.diy",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "doctor",
+                "domain": "ayashaborealis.doctor",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "dog",
+                "domain": "ayashaborealis.dog",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "domains",
+                "domain": "ayashaborealis.domains",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "download",
+                "domain": "ayashaborealis.download",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "earth",
+                "domain": "ayashaborealis.earth",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "education",
+                "domain": "ayashaborealis.education",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "energy",
+                "domain": "ayashaborealis.energy",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "engineer",
+                "domain": "ayashaborealis.engineer",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "engineering",
+                "domain": "ayashaborealis.engineering",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "enterprises",
+                "domain": "ayashaborealis.enterprises",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "equipment",
+                "domain": "ayashaborealis.equipment",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "estate",
+                "domain": "ayashaborealis.estate",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "events",
+                "domain": "ayashaborealis.events",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "exchange",
+                "domain": "ayashaborealis.exchange",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "expert",
+                "domain": "ayashaborealis.expert",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "exposed",
+                "domain": "ayashaborealis.exposed",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "express",
+                "domain": "ayashaborealis.express",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "fail",
+                "domain": "ayashaborealis.fail",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "faith",
+                "domain": "ayashaborealis.faith",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "family",
+                "domain": "ayashaborealis.family",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "fan",
+                "domain": "ayashaborealis.fan",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "fans",
+                "domain": "ayashaborealis.fans",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "farm",
+                "domain": "ayashaborealis.farm",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "fashion",
+                "domain": "ayashaborealis.fashion",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "finance",
+                "domain": "ayashaborealis.finance",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "financial",
+                "domain": "ayashaborealis.financial",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "fish",
+                "domain": "ayashaborealis.fish",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "fishing",
+                "domain": "ayashaborealis.fishing",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "fit",
+                "domain": "ayashaborealis.fit",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "fitness",
+                "domain": "ayashaborealis.fitness",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "flights",
+                "domain": "ayashaborealis.flights",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "florist",
+                "domain": "ayashaborealis.florist",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "flowers",
+                "domain": "ayashaborealis.flowers",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "food",
+                "domain": "ayashaborealis.food",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "football",
+                "domain": "ayashaborealis.football",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "forex",
+                "domain": "ayashaborealis.forex",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "forsale",
+                "domain": "ayashaborealis.forsale",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "foundation",
+                "domain": "ayashaborealis.foundation",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "fun",
+                "domain": "ayashaborealis.fun",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "fund",
+                "domain": "ayashaborealis.fund",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "furniture",
+                "domain": "ayashaborealis.furniture",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "futbol",
+                "domain": "ayashaborealis.futbol",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "fyi",
+                "domain": "ayashaborealis.fyi",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "gallery",
+                "domain": "ayashaborealis.gallery",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "game",
+                "domain": "ayashaborealis.game",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "games",
+                "domain": "ayashaborealis.games",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "garden",
+                "domain": "ayashaborealis.garden",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "gay",
+                "domain": "ayashaborealis.gay",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "gdn",
+                "domain": "ayashaborealis.gdn",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "gift",
+                "domain": "ayashaborealis.gift",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "gifts",
+                "domain": "ayashaborealis.gifts",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "gives",
+                "domain": "ayashaborealis.gives",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "giving",
+                "domain": "ayashaborealis.giving",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "glass",
+                "domain": "ayashaborealis.glass",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "global",
+                "domain": "ayashaborealis.global",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "gmbh",
+                "domain": "ayashaborealis.gmbh",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "gold",
+                "domain": "ayashaborealis.gold",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "golf",
+                "domain": "ayashaborealis.golf",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "graphics",
+                "domain": "ayashaborealis.graphics",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "gratis",
+                "domain": "ayashaborealis.gratis",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "green",
+                "domain": "ayashaborealis.green",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "gripe",
+                "domain": "ayashaborealis.gripe",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "group",
+                "domain": "ayashaborealis.group",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "guide",
+                "domain": "ayashaborealis.guide",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "guitars",
+                "domain": "ayashaborealis.guitars",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "guru",
+                "domain": "ayashaborealis.guru",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "hair",
+                "domain": "ayashaborealis.hair",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "haus",
+                "domain": "ayashaborealis.haus",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "health",
+                "domain": "ayashaborealis.health",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "healthcare",
+                "domain": "ayashaborealis.healthcare",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "help",
+                "domain": "ayashaborealis.help",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "hockey",
+                "domain": "ayashaborealis.hockey",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "holdings",
+                "domain": "ayashaborealis.holdings",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "holiday",
+                "domain": "ayashaborealis.holiday",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "homes",
+                "domain": "ayashaborealis.homes",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "horse",
+                "domain": "ayashaborealis.horse",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "hospital",
+                "domain": "ayashaborealis.hospital",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "host",
+                "domain": "ayashaborealis.host",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "hosting",
+                "domain": "ayashaborealis.hosting",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "house",
+                "domain": "ayashaborealis.house",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "icu",
+                "domain": "ayashaborealis.icu",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "immo",
+                "domain": "ayashaborealis.immo",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "immobilien",
+                "domain": "ayashaborealis.immobilien",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "inc",
+                "domain": "ayashaborealis.inc",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "industries",
+                "domain": "ayashaborealis.industries",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "ink",
+                "domain": "ayashaborealis.ink",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "institute",
+                "domain": "ayashaborealis.institute",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "insure",
+                "domain": "ayashaborealis.insure",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "international",
+                "domain": "ayashaborealis.international",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "investments",
+                "domain": "ayashaborealis.investments",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "irish",
+                "domain": "ayashaborealis.irish",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "jewelry",
+                "domain": "ayashaborealis.jewelry",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "juegos",
+                "domain": "ayashaborealis.juegos",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "kaufen",
+                "domain": "ayashaborealis.kaufen",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "kids",
+                "domain": "ayashaborealis.kids",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "kim",
+                "domain": "ayashaborealis.kim",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "kitchen",
+                "domain": "ayashaborealis.kitchen",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "kiwi",
+                "domain": "ayashaborealis.kiwi",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "land",
+                "domain": "ayashaborealis.land",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "lat",
+                "domain": "ayashaborealis.lat",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "lawyer",
+                "domain": "ayashaborealis.lawyer",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "lease",
+                "domain": "ayashaborealis.lease",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "legal",
+                "domain": "ayashaborealis.legal",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "lgbt",
+                "domain": "ayashaborealis.lgbt",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "life",
+                "domain": "ayashaborealis.life",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "lifestyle",
+                "domain": "ayashaborealis.lifestyle",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "lighting",
+                "domain": "ayashaborealis.lighting",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "limited",
+                "domain": "ayashaborealis.limited",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "limo",
+                "domain": "ayashaborealis.limo",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "link",
+                "domain": "ayashaborealis.link",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "live",
+                "domain": "ayashaborealis.live",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "living",
+                "domain": "ayashaborealis.living",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "llc",
+                "domain": "ayashaborealis.llc",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "loan",
+                "domain": "ayashaborealis.loan",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "loans",
+                "domain": "ayashaborealis.loans",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "lol",
+                "domain": "ayashaborealis.lol",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "lotto",
+                "domain": "ayashaborealis.lotto",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "ltd",
+                "domain": "ayashaborealis.ltd",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "ltda",
+                "domain": "ayashaborealis.ltda",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "luxe",
+                "domain": "ayashaborealis.luxe",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "luxury",
+                "domain": "ayashaborealis.luxury",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "maison",
+                "domain": "ayashaborealis.maison",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "makeup",
+                "domain": "ayashaborealis.makeup",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "management",
+                "domain": "ayashaborealis.management",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "market",
+                "domain": "ayashaborealis.market",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "marketing",
+                "domain": "ayashaborealis.marketing",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "markets",
+                "domain": "ayashaborealis.markets",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "mba",
+                "domain": "ayashaborealis.mba",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "media",
+                "domain": "ayashaborealis.media",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "memorial",
+                "domain": "ayashaborealis.memorial",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "men",
+                "domain": "ayashaborealis.men",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "menu",
+                "domain": "ayashaborealis.menu",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "moda",
+                "domain": "ayashaborealis.moda",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "moe",
+                "domain": "ayashaborealis.moe",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "mom",
+                "domain": "ayashaborealis.mom",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "money",
+                "domain": "ayashaborealis.money",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "monster",
+                "domain": "ayashaborealis.monster",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "mortgage",
+                "domain": "ayashaborealis.mortgage",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "motorcycles",
+                "domain": "ayashaborealis.motorcycles",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "movie",
+                "domain": "ayashaborealis.movie",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "navy",
+                "domain": "ayashaborealis.navy",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "network",
+                "domain": "ayashaborealis.network",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "news",
+                "domain": "ayashaborealis.news",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "ninja",
+                "domain": "ayashaborealis.ninja",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "one",
+                "domain": "ayashaborealis.one",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "onl",
+                "domain": "ayashaborealis.onl",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "ooo",
+                "domain": "ayashaborealis.ooo",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "organic",
+                "domain": "ayashaborealis.organic",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "partners",
+                "domain": "ayashaborealis.partners",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "parts",
+                "domain": "ayashaborealis.parts",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "party",
+                "domain": "ayashaborealis.party",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "pet",
+                "domain": "ayashaborealis.pet",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "photo",
+                "domain": "ayashaborealis.photo",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "photography",
+                "domain": "ayashaborealis.photography",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "photos",
+                "domain": "ayashaborealis.photos",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "pics",
+                "domain": "ayashaborealis.pics",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "pictures",
+                "domain": "ayashaborealis.pictures",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "pink",
+                "domain": "ayashaborealis.pink",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "pizza",
+                "domain": "ayashaborealis.pizza",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "place",
+                "domain": "ayashaborealis.place",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "plumbing",
+                "domain": "ayashaborealis.plumbing",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "plus",
+                "domain": "ayashaborealis.plus",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "poker",
+                "domain": "ayashaborealis.poker",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "porn",
+                "domain": "ayashaborealis.porn",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "press",
+                "domain": "ayashaborealis.press",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "productions",
+                "domain": "ayashaborealis.productions",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "promo",
+                "domain": "ayashaborealis.promo",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "properties",
+                "domain": "ayashaborealis.properties",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "property",
+                "domain": "ayashaborealis.property",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "pub",
+                "domain": "ayashaborealis.pub",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "qpon",
+                "domain": "ayashaborealis.qpon",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "quest",
+                "domain": "ayashaborealis.quest",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "racing",
+                "domain": "ayashaborealis.racing",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "realestate",
+                "domain": "ayashaborealis.realestate",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "recipes",
+                "domain": "ayashaborealis.recipes",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "red",
+                "domain": "ayashaborealis.red",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "rehab",
+                "domain": "ayashaborealis.rehab",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "reise",
+                "domain": "ayashaborealis.reise",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "reisen",
+                "domain": "ayashaborealis.reisen",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "ren",
+                "domain": "ayashaborealis.ren",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "rent",
+                "domain": "ayashaborealis.rent",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "rentals",
+                "domain": "ayashaborealis.rentals",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "repair",
+                "domain": "ayashaborealis.repair",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "report",
+                "domain": "ayashaborealis.report",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "republican",
+                "domain": "ayashaborealis.republican",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "rest",
+                "domain": "ayashaborealis.rest",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "restaurant",
+                "domain": "ayashaborealis.restaurant",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "review",
+                "domain": "ayashaborealis.review",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "reviews",
+                "domain": "ayashaborealis.reviews",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "rich",
+                "domain": "ayashaborealis.rich",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "rip",
+                "domain": "ayashaborealis.rip",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "rocks",
+                "domain": "ayashaborealis.rocks",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "rodeo",
+                "domain": "ayashaborealis.rodeo",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "rugby",
+                "domain": "ayashaborealis.rugby",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "run",
+                "domain": "ayashaborealis.run",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "sale",
+                "domain": "ayashaborealis.sale",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "salon",
+                "domain": "ayashaborealis.salon",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "sarl",
+                "domain": "ayashaborealis.sarl",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "sbs",
+                "domain": "ayashaborealis.sbs",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "school",
+                "domain": "ayashaborealis.school",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "schule",
+                "domain": "ayashaborealis.schule",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "science",
+                "domain": "ayashaborealis.science",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "scot",
+                "domain": "ayashaborealis.scot",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "services",
+                "domain": "ayashaborealis.services",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "sex",
+                "domain": "ayashaborealis.sex",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "sexy",
+                "domain": "ayashaborealis.sexy",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "shiksha",
+                "domain": "ayashaborealis.shiksha",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "shoes",
+                "domain": "ayashaborealis.shoes",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "shop",
+                "domain": "ayashaborealis.shop",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "shopping",
+                "domain": "ayashaborealis.shopping",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "show",
+                "domain": "ayashaborealis.show",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "singles",
+                "domain": "ayashaborealis.singles",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "site",
+                "domain": "ayashaborealis.site",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "ski",
+                "domain": "ayashaborealis.ski",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "skin",
+                "domain": "ayashaborealis.skin",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "soccer",
+                "domain": "ayashaborealis.soccer",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "social",
+                "domain": "ayashaborealis.social",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "software",
+                "domain": "ayashaborealis.software",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "solar",
+                "domain": "ayashaborealis.solar",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "solutions",
+                "domain": "ayashaborealis.solutions",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "soy",
+                "domain": "ayashaborealis.soy",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "spa",
+                "domain": "ayashaborealis.spa",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "space",
+                "domain": "ayashaborealis.space",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "srl",
+                "domain": "ayashaborealis.srl",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "store",
+                "domain": "ayashaborealis.store",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "stream",
+                "domain": "ayashaborealis.stream",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "studio",
+                "domain": "ayashaborealis.studio",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "style",
+                "domain": "ayashaborealis.style",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "sucks",
+                "domain": "ayashaborealis.sucks",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "supplies",
+                "domain": "ayashaborealis.supplies",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "supply",
+                "domain": "ayashaborealis.supply",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "support",
+                "domain": "ayashaborealis.support",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "surf",
+                "domain": "ayashaborealis.surf",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "surgery",
+                "domain": "ayashaborealis.surgery",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "systems",
+                "domain": "ayashaborealis.systems",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "tattoo",
+                "domain": "ayashaborealis.tattoo",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "tax",
+                "domain": "ayashaborealis.tax",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "taxi",
+                "domain": "ayashaborealis.taxi",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "team",
+                "domain": "ayashaborealis.team",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "technology",
+                "domain": "ayashaborealis.technology",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "tennis",
+                "domain": "ayashaborealis.tennis",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "theater",
+                "domain": "ayashaborealis.theater",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "tickets",
+                "domain": "ayashaborealis.tickets",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "tienda",
+                "domain": "ayashaborealis.tienda",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "tips",
+                "domain": "ayashaborealis.tips",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "tires",
+                "domain": "ayashaborealis.tires",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "today",
+                "domain": "ayashaborealis.today",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "tools",
+                "domain": "ayashaborealis.tools",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "top",
+                "domain": "ayashaborealis.top",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "tours",
+                "domain": "ayashaborealis.tours",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "town",
+                "domain": "ayashaborealis.town",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "toys",
+                "domain": "ayashaborealis.toys",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "trade",
+                "domain": "ayashaborealis.trade",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "trading",
+                "domain": "ayashaborealis.trading",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "training",
+                "domain": "ayashaborealis.training",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "tube",
+                "domain": "ayashaborealis.tube",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "university",
+                "domain": "ayashaborealis.university",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "uno",
+                "domain": "ayashaborealis.uno",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "vacations",
+                "domain": "ayashaborealis.vacations",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "vana",
+                "domain": "ayashaborealis.vana",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "vegas",
+                "domain": "ayashaborealis.vegas",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "ventures",
+                "domain": "ayashaborealis.ventures",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "vet",
+                "domain": "ayashaborealis.vet",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "viajes",
+                "domain": "ayashaborealis.viajes",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "video",
+                "domain": "ayashaborealis.video",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "villas",
+                "domain": "ayashaborealis.villas",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "vin",
+                "domain": "ayashaborealis.vin",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "vip",
+                "domain": "ayashaborealis.vip",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "vision",
+                "domain": "ayashaborealis.vision",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "vodka",
+                "domain": "ayashaborealis.vodka",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "vote",
+                "domain": "ayashaborealis.vote",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "voting",
+                "domain": "ayashaborealis.voting",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "voto",
+                "domain": "ayashaborealis.voto",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "voyage",
+                "domain": "ayashaborealis.voyage",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "wales",
+                "domain": "ayashaborealis.wales",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "wang",
+                "domain": "ayashaborealis.wang",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "watch",
+                "domain": "ayashaborealis.watch",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "watches",
+                "domain": "ayashaborealis.watches",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "webcam",
+                "domain": "ayashaborealis.webcam",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "website",
+                "domain": "ayashaborealis.website",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "wedding",
+                "domain": "ayashaborealis.wedding",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "wiki",
+                "domain": "ayashaborealis.wiki",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "win",
+                "domain": "ayashaborealis.win",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "wine",
+                "domain": "ayashaborealis.wine",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "work",
+                "domain": "ayashaborealis.work",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "works",
+                "domain": "ayashaborealis.works",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "world",
+                "domain": "ayashaborealis.world",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "wtf",
+                "domain": "ayashaborealis.wtf",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "yachts",
+                "domain": "ayashaborealis.yachts",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "yoga",
+                "domain": "ayashaborealis.yoga",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            },
+            {
+                "tld": "zone",
+                "domain": "ayashaborealis.zone",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "ngTLD"
+            }
+        ],
+        "sTLD": [
+            {
+                "tld": "aero",
+                "domain": "ayashaborealis.aero",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "sTLD"
+            },
+            {
+                "tld": "asia",
+                "domain": "ayashaborealis.asia",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "sTLD"
+            },
+            {
+                "tld": "cat",
+                "domain": "ayashaborealis.cat",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "sTLD"
+            },
+            {
+                "tld": "coop",
+                "domain": "ayashaborealis.coop",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "sTLD"
+            },
+            {
+                "tld": "edu",
+                "domain": "ayashaborealis.edu",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "sTLD"
+            },
+            {
+                "tld": "gov",
+                "domain": "ayashaborealis.gov",
+                "registered": false,
+                "method": "dns_failed",
+                "errors": [
+                    "wildcard_dns_inconclusive",
+                    "wildcard_dns_inconclusive",
+                    "wildcard_dns_inconclusive"
+                ],
+                "category": "sTLD"
+            },
+            {
+                "tld": "int",
+                "domain": "ayashaborealis.int",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "sTLD"
+            },
+            {
+                "tld": "mil",
+                "domain": "ayashaborealis.mil",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "sTLD"
+            },
+            {
+                "tld": "museum",
+                "domain": "ayashaborealis.museum",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "sTLD"
+            },
+            {
+                "tld": "post",
+                "domain": "ayashaborealis.post",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "sTLD"
+            }
+        ],
+        "geographicTLD": [
+            {
+                "tld": "berlin",
+                "domain": "ayashaborealis.berlin",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "geographicTLD"
+            },
+            {
+                "tld": "boston",
+                "domain": "ayashaborealis.boston",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "geographicTLD"
+            },
+            {
+                "tld": "cologne",
+                "domain": "ayashaborealis.cologne",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "geographicTLD"
+            },
+            {
+                "tld": "koeln",
+                "domain": "ayashaborealis.koeln",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "geographicTLD"
+            },
+            {
+                "tld": "london",
+                "domain": "ayashaborealis.london",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "geographicTLD"
+            },
+            {
+                "tld": "melbourne",
+                "domain": "ayashaborealis.melbourne",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "geographicTLD"
+            },
+            {
+                "tld": "miami",
+                "domain": "ayashaborealis.miami",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "geographicTLD"
+            },
+            {
+                "tld": "nyc",
+                "domain": "ayashaborealis.nyc",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "geographicTLD"
+            },
+            {
+                "tld": "quebec",
+                "domain": "ayashaborealis.quebec",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "geographicTLD"
+            },
+            {
+                "tld": "sydney",
+                "domain": "ayashaborealis.sydney",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "geographicTLD"
+            },
+            {
+                "tld": "tokyo",
+                "domain": "ayashaborealis.tokyo",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "geographicTLD"
+            },
+            {
+                "tld": "wien",
+                "domain": "ayashaborealis.wien",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "geographicTLD"
+            },
+            {
+                "tld": "yokohama",
+                "domain": "ayashaborealis.yokohama",
+                "registered": false,
+                "method": "dns_standard",
+                "dnsStatus": 3,
+                "category": "geographicTLD"
+            }
+        ]
+    },
+    "registeredCount": 0,
+    "totalCount": 722,
+    "score": 0,
+    "keywordStats": null,
+    "individualKeywordStats": [
+        {
+            "keyword": "real",
+            "stats": {
+                "keyword": "real",
+                "domain_count": 8352,
+                "rank": 762,
+                "percentage": 0.007243,
+                "popularity_score": 99.91,
+                "per_million": 72.43,
+                "popularity_tier": "extremely_popular"
+            }
+        },
+        {
+            "keyword": "aya",
+            "stats": {
+                "keyword": "aya",
+                "domain_count": 2824,
+                "rank": 1757,
+                "percentage": 0.002449,
+                "popularity_score": 99.8,
+                "per_million": 24.49,
+                "popularity_tier": "extremely_popular"
+            }
+        },
+        {
+            "keyword": "ayas",
+            "stats": {
+                "keyword": "ayas",
+                "domain_count": 55,
+                "rank": 64035,
+                "percentage": 0.000048,
+                "popularity_score": 92.67,
+                "per_million": 0.48,
+                "popularity_tier": "popular"
+            }
+        },
+        {
+            "keyword": "ayash",
+            "stats": {
+                "keyword": "ayash",
+                "domain_count": 22,
+                "rank": 286071,
+                "percentage": 0.000019,
+                "popularity_score": 67.27,
+                "per_million": 0.19,
+                "popularity_tier": "average"
+            }
+        }
+    ]
+}
