@@ -6,16 +6,19 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/api/tld-checker': {
-        target: 'https://fzvfvjcsnodijrdujzrh.supabase.co/functions/v1',
+      '/api/replicate': {
+        target: 'https://us-central1-nameiro-c012e.cloudfunctions.net/replicateProxy/api/replicate',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api\/tld-checker/, '/tld-checker'),
-        configure: (proxy, options) => {
-          proxy.on('proxyReq', (proxyReq, req, res) => {
-            proxyReq.setHeader('apikey', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ6dmZ2amNzbm9kaWpyZHVqenJoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ4MTIzNzcsImV4cCI6MjA3MDM4ODM3N30.VWaITCDp5Hy39aCgvtqrDtWJla4q4x0CyJb40GqgvdI');
-            proxyReq.setHeader('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ6dmZ2amNzbm9kaWpyZHVqenJoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ4MTIzNzcsImV4cCI6MjA3MDM4ODM3N30.VWaITCDp5Hy39aCgvtqrDtWJla4q4x0CyJb40GqgvdI');
-          });
-        }
+        rewrite: (path) => path.replace(/^\/api\/replicate/, ''),
+        secure: false
+      },
+      '/api/atom': {
+        // Pointing to Prod Function for local dev because we need the secret/backend logic
+        // Update this URL if the region/project changes
+        target: 'https://us-central1-nameiro-c012e.cloudfunctions.net/replicateProxy/api/atom',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/atom/, ''),
+        secure: false
       }
     }
   }

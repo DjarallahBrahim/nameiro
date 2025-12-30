@@ -46,7 +46,7 @@ const Navbar = () => {
                     <li><a href="#hero" onClick={(e) => handleNavClick(e, '#hero')}>Home</a></li>
                     <li><a href="#about" onClick={(e) => handleNavClick(e, '#about')}>About</a></li>
                     <li><a href="#portfolio" onClick={(e) => handleNavClick(e, '#portfolio')}>Domains</a></li>
-                    <li><Link to="/analyse-domain" target="_blank" className="nav-link">Analyse Domain</Link></li>
+                    <li><Link to="/analyse-domain" target="_blank" className="nav-link">Analyse Domains</Link></li>
                     <li><a href="#contact" className="btn btn-primary btn-sm" onClick={(e) => handleNavClick(e, '#contact')}>Contact</a></li>
                 </ul>
             </div>
