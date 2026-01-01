@@ -15,7 +15,7 @@ const DomainAnalysis = () => {
     const [isDragActive, setIsDragActive] = useState(false);
     const [hasAnalyzed, setHasAnalyzed] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
-    const [itemsPerPage, setItemsPerPage] = useState(50);
+    const [itemsPerPage, setItemsPerPage] = useState(20);
 
     // Analysis Results State
     const [analysisResults, setAnalysisResults] = useState({});
@@ -29,6 +29,26 @@ const DomainAnalysis = () => {
     const [selectedExtensions, setSelectedExtensions] = useState(['.com']);
     const [extensionDropdownOpen, setExtensionDropdownOpen] = useState(false);
     const [extensionCounts, setExtensionCounts] = useState({});
+
+    // Auction End Date Filter State
+    const [auctionEndResults, setAuctionEndResults] = useState({}); // Map: domain -> timestamp
+    const [hasAuctionData, setHasAuctionData] = useState(false);
+
+    // Replace range with unique available dates
+    const [availableAuctionDates, setAvailableAuctionDates] = useState([]);
+    const [selectedAuctionDate, setSelectedAuctionDate] = useState('');
+
+    const [auctionDropdownOpen, setAuctionDropdownOpen] = useState(false);
+    const [auctionDateCounts, setAuctionDateCounts] = useState({});
+
+    // Sort Order State
+    const [sortOrder, setSortOrder] = useState(''); // '' (default), 'asc', 'desc'
+    const [sortDropdownOpen, setSortDropdownOpen] = useState(false);
+
+
+
+    // Search Mode State
+    const [searchMode, setSearchMode] = useState('contains'); // 'contains', 'startsWith', 'endsWith'
 
     const [showAtomSettings, setShowAtomSettings] = useState(false);
     const [atomCredentials, setAtomCredentials] = useState({
@@ -118,26 +138,85 @@ const DomainAnalysis = () => {
 
             if (lines.length === 0) return;
 
-            const headers = lines[0].split(',').map(h => h.trim().toLowerCase());
-            let domainColIndex = headers.indexOf('domain');
+            // Find true header row (ignoring metadata lines like "****Auction lists...")
+            let headerRowIndex = 0;
+            let headers = [];
 
-            if (domainColIndex === -1) {
-                // heuristic: if no header 'domain', assume first column
-                domainColIndex = 0;
+            for (let i = 0; i < Math.min(lines.length, 10); i++) {
+                const row = lines[i].toLowerCase();
+                if (row.includes('domain') || row.includes('auction end')) {
+                    headerRowIndex = i;
+                    headers = lines[i].split(',').map(h => h.trim().toLowerCase());
+                    break;
+                }
             }
 
+            // Fallback: if no clear header found, try line 0
+            if (headers.length === 0 && lines.length > 0) {
+                headers = lines[0].split(',').map(h => h.trim().toLowerCase());
+            }
+
+            // Robust header detection
+            const auctionColIndex = headers.findIndex(h =>
+                h === 'auction end' ||
+                h === 'auction end date' ||
+                h.includes('auction end')
+            );
+
+            let domainColIndex = headers.indexOf('domain');
+            if (domainColIndex === -1) domainColIndex = 0;
+
             const extractedDomains = [];
-            const startIdx = headers.indexOf('domain') !== -1 ? 1 : 0;
+            const extractedAuctionDates = {};
+            let foundAuctionData = false;
+
+            const startIdx = headerRowIndex + 1;
 
             for (let i = startIdx; i < lines.length; i++) {
                 const columns = lines[i].split(',').map(c => c.trim());
                 if (columns[domainColIndex]) {
-                    extractedDomains.push(columns[domainColIndex].trim());
+                    const domain = columns[domainColIndex].trim();
+                    extractedDomains.push(domain);
+
+                    // Extract Auction End Date if available
+                    if (auctionColIndex !== -1 && columns[auctionColIndex]) {
+                        const dateStr = columns[auctionColIndex].trim();
+                        // robustly parse date
+                        const dateObj = new Date(dateStr);
+                        if (!isNaN(dateObj.getTime())) {
+                            extractedAuctionDates[domain] = dateObj.getTime();
+                            foundAuctionData = true;
+                        }
+                    }
                 }
             }
 
             if (extractedDomains.length > 0) {
                 setRawDomains(extractedDomains);
+                setAuctionEndResults(extractedAuctionDates);
+                setHasAuctionData(foundAuctionData);
+
+                // Extract unique dates for the dropdown
+                // Extract unique dates and counts for the dropdown
+                if (foundAuctionData) {
+                    const uniqueDates = new Set();
+                    const dateCounts = {};
+
+                    Object.values(extractedAuctionDates).forEach(ts => {
+                        const dateStr = new Date(ts).toLocaleDateString();
+                        uniqueDates.add(dateStr);
+                        dateCounts[dateStr] = (dateCounts[dateStr] || 0) + 1;
+                    });
+
+                    // Sort dates chronologically
+                    const sortedDates = Array.from(uniqueDates).sort((a, b) => new Date(a) - new Date(b));
+                    setAvailableAuctionDates(sortedDates);
+                    setAuctionDateCounts(dateCounts);
+                } else {
+                    setAvailableAuctionDates([]);
+                    setAuctionDateCounts({});
+                }
+
                 setOriginalCount(extractedDomains.length);
                 setHasAnalyzed(true);
             }
@@ -255,13 +334,41 @@ const DomainAnalysis = () => {
         }
 
         // Filter by search query
-        if (searchQuery.trim()) {
+        if (searchQuery) {
             const query = searchQuery.toLowerCase();
-            filtered = filtered.filter(domain => domain.toLowerCase().includes(query));
+            if (searchMode === 'startsWith') {
+                filtered = filtered.filter(domain => domain.toLowerCase().startsWith(query));
+            } else if (searchMode === 'endsWith') {
+                filtered = filtered.filter(domain => {
+                    const lastDotIndex = domain.lastIndexOf('.');
+                    const nameOnly = lastDotIndex !== -1 ? domain.substring(0, lastDotIndex) : domain;
+                    return nameOnly.toLowerCase().endsWith(query);
+                });
+            } else {
+                // contains (default)
+                filtered = filtered.filter(domain => domain.toLowerCase().includes(query));
+            }
+        }
+
+        // Filter by Auction Date Dropdown
+        if (hasAuctionData && selectedAuctionDate) {
+            filtered = filtered.filter(domain => {
+                const mask = auctionEndResults[domain];
+                if (!mask) return false;
+                // Compare by local date string to match the dropdown value
+                return new Date(mask).toLocaleDateString() === selectedAuctionDate;
+            });
+        }
+
+        // Apply Sorting
+        if (sortOrder === 'asc') {
+            filtered = [...filtered].sort((a, b) => a.length - b.length);
+        } else if (sortOrder === 'desc') {
+            filtered = [...filtered].sort((a, b) => b.length - a.length);
         }
 
         return filtered;
-    }, [domains, searchQuery, selectedExtensions]);
+    }, [domains, searchQuery, selectedExtensions, selectedAuctionDate, hasAuctionData, auctionEndResults, sortOrder, searchMode]);
 
     const totalPages = Math.ceil(filteredDomains.length / itemsPerPage);
     const paginatedDomains = useMemo(() => {
@@ -283,9 +390,6 @@ const DomainAnalysis = () => {
         setSearchQuery(query);
         setCurrentPage(1);
     };
-
-
-
 
 
     const handleAnalyseAtom = async (domain) => {
@@ -322,9 +426,6 @@ const DomainAnalysis = () => {
             setAnalyzingDomains(prev => ({ ...prev, [domain]: false }));
         }
     };
-
-
-
 
     return (
         <div className="domain-analysis-container">
@@ -534,85 +635,7 @@ const DomainAnalysis = () => {
                     </>
                 ) : (
                     <div className="results-section">
-                        {/* Search Bar */}
-                        <div className="search-container">
-                            <input
-                                type="text"
-                                placeholder="Search domains..."
-                                value={searchQuery}
-                                onChange={(e) => handleSearchChange(e.target.value)}
-                                className="search-input"
-                            />
-                            {searchQuery && (
-                                <button
-                                    className="search-clear"
-                                    onClick={() => handleSearchChange('')}
-                                >
-                                    ✕
-                                </button>
-                            )}
-                        </div>
-
-                        {/* Extension Filter Dropdown */}
-                        {availableExtensions.length > 0 && (
-                            <div className="extension-filter-dropdown">
-                                <button
-                                    className="extension-dropdown-toggle"
-                                    onClick={() => setExtensionDropdownOpen(!extensionDropdownOpen)}
-                                >
-                                    <span className="dropdown-label">Filter by Extension:</span>
-                                    <span className="dropdown-selected-count">
-                                        {selectedExtensions.length} selected
-                                    </span>
-                                    <span className="dropdown-arrow">{extensionDropdownOpen ? '▲' : '▼'}</span>
-                                </button>
-
-                                {extensionDropdownOpen && (
-                                    <div className="extension-dropdown-content">
-                                        <div className="dropdown-actions">
-                                            <button
-                                                className="btn-select-all-ext"
-                                                onClick={() => setSelectedExtensions(availableExtensions)}
-                                            >
-                                                Select All
-                                            </button>
-                                            <button
-                                                className="btn-clear-all-ext"
-                                                onClick={() => setSelectedExtensions([])}
-                                            >
-                                                Clear All
-                                            </button>
-                                        </div>
-                                        <div className="extension-chips-grid">
-                                            {availableExtensions.map(ext => (
-                                                <label
-                                                    key={ext}
-                                                    className={`extension-checkbox-item ${selectedExtensions.includes(ext) ? 'selected' : ''}`}
-                                                >
-                                                    <input
-                                                        type="checkbox"
-                                                        checked={selectedExtensions.includes(ext)}
-                                                        onChange={(e) => {
-                                                            if (e.target.checked) {
-                                                                setSelectedExtensions([...selectedExtensions, ext]);
-                                                            } else {
-                                                                setSelectedExtensions(selectedExtensions.filter(x => x !== ext));
-                                                            }
-                                                        }}
-                                                        className="extension-checkbox"
-                                                    />
-                                                    <span className="extension-name">{ext}</span>
-                                                    <span className="extension-count">
-                                                        {extensionCounts[ext] || 0}
-                                                    </span>
-                                                </label>
-                                            ))}
-                                        </div>
-                                    </div>
-                                )}
-                            </div>
-                        )}
-
+                        {/* stats */}
                         <div className="stats-row">
                             <div className="stat-item">
                                 <span className="stat-value">{originalCount.toLocaleString()}</span>
@@ -633,13 +656,221 @@ const DomainAnalysis = () => {
                                 <span className="stat-label">Current Page</span>
                             </div>
                         </div>
+                        {/* Search Bar */}
+                        <div className="search-container">
+                            <div className="search-input-wrapper">
+                                <input
+                                    type="text"
+                                    placeholder="Search domains..."
+                                    value={searchQuery}
+                                    onChange={(e) => handleSearchChange(e.target.value)}
+                                    className="search-input"
+                                />
+                                {searchQuery && (
+                                    <button
+                                        className="search-clear"
+                                        onClick={() => handleSearchChange('')}
+                                    >
+                                        ✕
+                                    </button>
+                                )}
+                            </div>
+
+                            {/* Search Modes */}
+                            <div className="search-mode-container">
+                                {[
+                                    { id: 'startsWith', label: 'Start with' },
+                                    { id: 'contains', label: 'Contain' },
+                                    { id: 'endsWith', label: 'End with' }
+                                ].map(mode => (
+                                    <label
+                                        key={mode.id}
+                                        className={`extension-checkbox-item ${searchMode === mode.id ? 'selected' : ''}`}
+                                        style={{ padding: '0.4rem 0.8rem', fontSize: '0.85rem' }}
+                                    >
+                                        <input
+                                            type="checkbox"
+                                            checked={searchMode === mode.id}
+                                            onChange={() => setSearchMode(mode.id)}
+                                            style={{ display: 'none' }}
+                                        />
+                                        <span className={`extension-name ${searchMode === mode.id ? 'selected' : ''}`}>{mode.label}</span>
+                                    </label>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Unified Filter Group */}
+                        {domains.length > 0 && (
+                            <div className="filter-group-container">
+                                {/* Extension Filter Dropdown */}
+                                {availableExtensions.length > 0 && (
+                                    <div className="extension-filter-dropdown">
+                                        <button
+                                            className="extension-dropdown-toggle"
+                                            onClick={() => setExtensionDropdownOpen(!extensionDropdownOpen)}
+                                        >
+                                            <span className="dropdown-label">Filter by Extension:</span>
+                                            <span className="dropdown-selected-count">
+                                                {selectedExtensions.length} selected
+                                            </span>
+                                            <span className="dropdown-arrow">{extensionDropdownOpen ? '▲' : '▼'}</span>
+                                        </button>
+
+                                        {extensionDropdownOpen && (
+                                            <div className="extension-dropdown-content">
+                                                <div className="dropdown-actions">
+                                                    <button
+                                                        className="btn-select-all-ext"
+                                                        onClick={() => setSelectedExtensions(availableExtensions)}
+                                                    >
+                                                        Select All
+                                                    </button>
+                                                    <button
+                                                        className="btn-clear-all-ext"
+                                                        onClick={() => setSelectedExtensions([])}
+                                                    >
+                                                        Clear All
+                                                    </button>
+                                                </div>
+                                                <div className="extension-chips-grid">
+                                                    {availableExtensions.map(ext => (
+                                                        <label
+                                                            key={ext}
+                                                            className={`extension-checkbox-item ${selectedExtensions.includes(ext) ? 'selected' : ''}`}
+                                                        >
+                                                            <input
+                                                                type="checkbox"
+                                                                checked={selectedExtensions.includes(ext)}
+                                                                onChange={(e) => {
+                                                                    if (e.target.checked) {
+                                                                        setSelectedExtensions([...selectedExtensions, ext]);
+                                                                    } else {
+                                                                        setSelectedExtensions(selectedExtensions.filter(x => x !== ext));
+                                                                    }
+                                                                }}
+                                                                className="extension-checkbox"
+                                                            />
+                                                            <span className="extension-name">{ext}</span>
+                                                            <span className="extension-count">
+                                                                {extensionCounts[ext] || 0}
+                                                            </span>
+                                                        </label>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        )}
+                                    </div>
+                                )}
+
+                                {/* Auction End Date Filter */}
+                                {/* Auction End Date Dropdown Filter */}
+                                {hasAuctionData && availableAuctionDates.length > 0 && (
+                                    <div className="extension-filter-dropdown">
+                                        <button
+                                            className="extension-dropdown-toggle"
+                                            onClick={() => setAuctionDropdownOpen(!auctionDropdownOpen)}
+                                        >
+                                            <span className="dropdown-label">Auction End Date:</span>
+                                            <span className="dropdown-selected-count">
+                                                {selectedAuctionDate || 'All Dates'}
+                                            </span>
+                                            <span className="dropdown-arrow">{auctionDropdownOpen ? '▲' : '▼'}</span>
+                                        </button>
+
+                                        {auctionDropdownOpen && (
+                                            <div className="extension-dropdown-content">
+                                                <div className="extension-chips-grid">
+                                                    <div
+                                                        className={`extension-checkbox-item ${selectedAuctionDate === '' ? 'selected' : ''}`}
+                                                        onClick={() => {
+                                                            setSelectedAuctionDate('');
+                                                            setAuctionDropdownOpen(false);
+                                                        }}
+                                                    >
+                                                        <span className="extension-name">All Dates</span>
+                                                    </div>
+                                                    {availableAuctionDates.map(dateStr => (
+                                                        <div
+                                                            key={dateStr}
+                                                            className={`extension-checkbox-item ${selectedAuctionDate === dateStr ? 'selected' : ''}`}
+                                                            onClick={() => {
+                                                                setSelectedAuctionDate(dateStr);
+                                                                setAuctionDropdownOpen(false);
+                                                            }}
+                                                        >
+                                                            <span className="extension-name">{dateStr}</span>
+                                                            <span className="extension-count">
+                                                                {auctionDateCounts[dateStr] || 0}
+                                                            </span>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        )}
+                                    </div>
+                                )}
+
+                                {/* Sort Order Dropdown */}
+                                <div className="extension-filter-dropdown">
+                                    <button
+                                        className="extension-dropdown-toggle"
+                                        onClick={() => setSortDropdownOpen(!sortDropdownOpen)}
+                                    >
+                                        <span className="dropdown-label">Order Results:</span>
+                                        <span className="dropdown-selected-count">
+                                            {sortOrder === 'asc' ? 'Shortest First' : sortOrder === 'desc' ? 'Longest First' : 'Default'}
+                                        </span>
+                                        <span className="dropdown-arrow">{sortDropdownOpen ? '▲' : '▼'}</span>
+                                    </button>
+
+                                    {sortDropdownOpen && (
+                                        <div className="extension-dropdown-content">
+                                            <div className="extension-chips-grid">
+                                                {[
+                                                    { label: 'Default', value: '' },
+                                                    { label: 'Shortest First', value: 'asc' },
+                                                    { label: 'Longest First', value: 'desc' }
+                                                ].map(option => (
+                                                    <div
+                                                        key={option.value}
+                                                        className={`extension-checkbox-item ${sortOrder === option.value ? 'selected' : ''}`}
+                                                        onClick={() => {
+                                                            setSortOrder(option.value);
+                                                            setSortDropdownOpen(false);
+                                                        }}
+                                                    >
+                                                        <span className="extension-name">{option.label}</span>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                        )}
 
                         <div className="domains-list">
                             {paginatedDomains.length > 0 ? (
                                 paginatedDomains.map((domain, index) => (
                                     <div key={index} className="domain-row-wrapper">
                                         <div className="domain-item">
-                                            <span className="domain-name">{domain}</span>
+                                            <div className="domain-info-col">
+                                                <a
+                                                    href={`http://${domain}`}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="domain-name"
+                                                    style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}
+                                                >
+                                                    {domain}
+                                                </a>
+                                                {auctionEndResults[domain] && (
+                                                    <span className="auction-date-badge">
+                                                        📅 {new Date(auctionEndResults[domain]).toLocaleDateString()}
+                                                    </span>
+                                                )}
+                                            </div>
 
                                             <div className="action-buttons-container">
                                                 <button
@@ -741,7 +972,7 @@ const DomainAnalysis = () => {
                                         onChange={(e) => handleItemsPerPageChange(Number(e.target.value))}
                                         className="page-size-select"
                                     >
-                                        <option value={50}>50</option>
+                                        <option value={20}>20</option>
                                         <option value={100}>100</option>
                                         <option value={200}>200</option>
                                     </select>
@@ -788,6 +1019,15 @@ const DomainAnalysis = () => {
                                 setOriginalCount(0);
                                 setCurrentPage(1);
                                 setAnalysisResults({});
+                                setAuctionEndResults({});
+                                setHasAuctionData(false);
+                                setAvailableAuctionDates([]);
+                                setSelectedAuctionDate('');
+                                setHasAuctionData(false);
+                                setAvailableAuctionDates([]);
+                                setSelectedAuctionDate('');
+                                setAuctionDropdownOpen(false);
+                                setAuctionDateCounts({});
                             }}>Upload New</button>
                         </div>
                     </div>
