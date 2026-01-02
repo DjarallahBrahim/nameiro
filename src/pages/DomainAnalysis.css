@@ -4,6 +4,7 @@
 @import './DomainAnalysis-filter-group.css';
 @import './DomainAnalysis-search-modes.css';
 @import './DomainAnalysis-scroll-hint.css';
+@import './DomainAnalysis-search-info.css';
 
 .domain-analysis-container {
     min-height: 100vh;

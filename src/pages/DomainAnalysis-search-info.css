@@ -1,0 +1,131 @@
+/* Search Info Tooltip and integrated icon styling */
+
+/* Ensure wrapper handles absolute positioning of children */
+.search-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Adjust input padding to make room for icons on the right */
+.search-input {
+    padding-right: 80px !important;
+    /* Make room for X and Info icons */
+}
+
+/* Container for the icon and tooltip */
+.search-info-tooltip-container {
+    position: absolute;
+    right: 15px;
+    /* Position to the right inside input */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: help;
+    height: 100%;
+    top: 0;
+}
+
+/* Adjust Search Clear button if present */
+/* If clear button exists, we might need to shift info icon or clear button.
+   Assuming clear button is also absolute or flex. 
+   Let's check DomainAnalysis-search-modes.css or similar for .search-clear 
+   Usually clear button is right: 10px or similar. 
+   We'll position info-icon to the left of clear button if both exist, 
+   but for simplicity, let's put info icon at right: 12px and shift clear button if needed.
+   Actually, the plan said "clean integration". 
+   Let's fix .search-clear locally here to ensure no overlap if possible, 
+   or rely on the flex layout if .search-input-wrapper uses it.
+*/
+
+/* If .search-input-wrapper is flex, we might not need absolute checks, 
+   but the input usually takes full width. 
+   Let's stick to absolute for the icon to overlay the input background. */
+
+.search-info-svg {
+    color: #94a3b8;
+    transition: all 0.2s ease;
+    opacity: 0.7;
+}
+
+.search-info-tooltip-container:hover .search-info-svg {
+    color: #60a5fa;
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Tooltip Styling */
+.search-info-tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 140%;
+    /* Move up above the input */
+    right: -10px;
+    /* Align near the icon */
+    transform: translateY(10px);
+    background: rgba(15, 23, 42, 0.98);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    color: #e2e8f0;
+    padding: 1rem;
+    border-radius: 12px;
+    width: 260px;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.6);
+    z-index: 100;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+    text-align: left;
+    backdrop-filter: blur(10px);
+}
+
+.search-info-tooltip strong {
+    color: #60a5fa;
+}
+
+.search-info-tooltip em {
+    color: #94a3b8;
+    font-style: italic;
+    font-size: 0.8rem;
+    display: block;
+    margin-top: 0.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 0.5rem;
+}
+
+/* Arrow for the tooltip */
+.search-info-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    right: 20px;
+    margin-left: -6px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: rgba(15, 23, 42, 0.98) transparent transparent transparent;
+}
+
+.search-info-tooltip-container:hover .search-info-tooltip {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Handle collision with Clear Button */
+/* Assuming .search-clear is positioned absolute right: 10px or similar. 
+   We should move the clear button or the info icon.
+   Let's check if we can select sibling. 
+   If both present, maybe use flex-gap? 
+   Better: Set info icon at right: 15px.
+   If search clear is present, it usually shows up.
+   Let's ensure .search-clear is positioned properly if it isn't already. 
+   To be safe, let's move the info icon a bit more to the left?
+   No, let's clean up position.
+*/
+
+.search-clear {
+    right: 45px !important;
+    /* Move clear button to the left of info icon if absolute */
+    /* Or if it's flex, order matters. */
+}

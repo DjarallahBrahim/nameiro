@@ -336,19 +336,27 @@ const DomainAnalysis = () => {
         }
 
         // Filter by search query
+
         if (searchQuery) {
-            const query = searchQuery.toLowerCase();
-            if (searchMode === 'startsWith') {
-                filtered = filtered.filter(domain => domain.toLowerCase().startsWith(query));
-            } else if (searchMode === 'endsWith') {
-                filtered = filtered.filter(domain => {
-                    const lastDotIndex = domain.lastIndexOf('.');
-                    const nameOnly = lastDotIndex !== -1 ? domain.substring(0, lastDotIndex) : domain;
-                    return nameOnly.toLowerCase().endsWith(query);
-                });
-            } else {
-                // contains (default)
-                filtered = filtered.filter(domain => domain.toLowerCase().includes(query));
+            const terms = searchQuery.toLowerCase().split(/\s+/).filter(t => t.length > 0);
+
+            if (terms.length > 0) {
+                if (searchMode === 'startsWith') {
+                    filtered = filtered.filter(domain =>
+                        terms.some(term => domain.toLowerCase().startsWith(term))
+                    );
+                } else if (searchMode === 'endsWith') {
+                    filtered = filtered.filter(domain => {
+                        const lastDotIndex = domain.lastIndexOf('.');
+                        const nameOnly = lastDotIndex !== -1 ? domain.substring(0, lastDotIndex) : domain;
+                        return terms.some(term => nameOnly.toLowerCase().endsWith(term));
+                    });
+                } else {
+                    // contains (default)
+                    filtered = filtered.filter(domain =>
+                        terms.some(term => domain.toLowerCase().includes(term))
+                    );
+                }
             }
         }
 
@@ -681,7 +689,23 @@ const DomainAnalysis = () => {
                                         ✕
                                     </button>
                                 )}
+
+                                {/* Search Info Icon (Inside Input) */}
+                                <div className="search-info-tooltip-container">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="search-info-svg">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                    </svg>
+                                    <div className="search-info-tooltip">
+                                        <strong>Multi-word Search:</strong><br />
+                                        Enter multiple words separated by spaces to find domains matching <strong>ANY</strong> of the terms (OR logic).<br /><br />
+                                        <em>Example: "shop store" finds domains with "shop" OR "store".</em>
+                                    </div>
+                                </div>
                             </div>
+
+
 
                             {/* Search Modes */}
                             <div className="search-mode-container">
