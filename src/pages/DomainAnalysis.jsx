@@ -63,6 +63,10 @@ const DomainAnalysis = () => {
     });
     const [humbleworthToken, setHumbleworthToken] = useState('');
 
+    // Super Super Valuation State
+    const [showSuperValuationModal, setShowSuperValuationModal] = useState(false);
+    const [isSuperValuating, setIsSuperValuating] = useState(false);
+
     // Load User Settings
     React.useEffect(() => {
         const fetchSettings = async () => {
@@ -302,6 +306,106 @@ const DomainAnalysis = () => {
         }
     };
 
+    const handleSuperValuation = async () => {
+        if (paginatedDomains.length === 0) return;
+
+        setShowSuperValuationModal(false);
+        setIsSuperValuating(true);
+
+        const domainsToAnalyze = paginatedDomains;
+        // 1. Lowercase domains according to best practices
+        const domainsString = domainsToAnalyze.map(d => d.toLowerCase()).join(',');
+
+        // Set analyzing state for all (using original keys)
+        const newAnalyzingState = { ...analyzingDomains };
+        domainsToAnalyze.forEach(d => newAnalyzingState[d] = true);
+        setAnalyzingDomains(newAnalyzingState);
+
+        const tokenToSend = humbleworthToken || undefined;
+
+        try {
+            // 1. Start Prediction
+            const response = await fetch('/api/replicate/predictions', {
+                method: "POST",
+                headers: {
+                    "Authorization": tokenToSend ? "Bearer " + tokenToSend : "",
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    version: "a925db842c707850e4ca7b7e86b217692b0353a9ca05eb028802c4a85db93843",
+                    input: { domains: domainsString }
+                }),
+            });
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`Start API failed: ${response.status} ${errorText} `);
+            }
+
+            const prediction = await response.json();
+            const predictionId = prediction.id;
+
+            // 2. Poll for Results
+            const pollUrl = `/api/replicate/predictions/${predictionId}`;
+            let result = prediction;
+
+            while (result.status !== "succeeded" && result.status !== "failed" && result.status !== "canceled") {
+                await new Promise(r => setTimeout(r, 1500)); // Wait 1.5s
+
+                const pollResponse = await fetch(pollUrl, {
+                    headers: {
+                        "Authorization": tokenToSend ? "Bearer " + tokenToSend : undefined,
+                    }
+                });
+
+                if (!pollResponse.ok) {
+                    const errorText = await pollResponse.text();
+                    throw new Error(`Poll API failed: ${pollResponse.status} ${errorText} `);
+                }
+
+                result = await pollResponse.json();
+            }
+
+            if (result.status === "succeeded" && result.output && result.output.valuations) {
+                // Update results for all domains
+                setAnalysisResults(prev => {
+                    const next = { ...prev };
+
+                    // Create a map of lowercase domains to their original case in our list
+                    // This ensures we can map the lowercase API response back to the correct state key
+                    const lowercaseToOriginal = {};
+                    domainsToAnalyze.forEach(d => lowercaseToOriginal[d.toLowerCase()] = d);
+
+                    result.output.valuations.forEach(val => {
+                        // The API returns 'domain' in lowercase (e.g. "blogerme.com")
+                        // We need to find which original domain string this corresponds to
+                        const returnedDomain = val.domain.toLowerCase();
+                        const originalDomainKey = lowercaseToOriginal[returnedDomain];
+
+                        if (originalDomainKey) {
+                            next[originalDomainKey] = val;
+                        }
+                    });
+                    return next;
+                });
+            } else if (result.status === "failed") {
+                throw new Error("Batch prediction failed on server side.");
+            }
+
+        } catch (error) {
+            console.error("Super Valuation failed:", error);
+            alert(`Super Valuation failed: ${error.message}`);
+        } finally {
+            // Reset analyzing state
+            setAnalyzingDomains(prev => {
+                const next = { ...prev };
+                domainsToAnalyze.forEach(d => next[d] = false);
+                return next;
+            });
+            setIsSuperValuating(false);
+        }
+    };
+
     const handleDrag = (e) => {
         e.preventDefault();
         e.stopPropagation();
@@ -472,6 +576,74 @@ const DomainAnalysis = () => {
 
     return (
         <div className="domain-analysis-container">
+            {/* Super Valuation Confirmation Modal - Moved to Top Level for Positioning */}
+            {showSuperValuationModal && (
+                <div style={{
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    width: '100vw',
+                    height: '100vh',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    backgroundColor: 'rgba(0,0,0,0)',
+                    zIndex: 99999,
+                    pointerEvents: 'auto'
+                }} onClick={() => setShowSuperValuationModal(false)}>
+                    <div className="settings-modal" onClick={e => e.stopPropagation()} style={{
+                        position: 'relative',
+                        maxWidth: '400px',
+                        width: '90%',
+                        maxHeight: '90vh',
+                        background: '#1e293b',
+                        borderRadius: '16px',
+                        boxShadow: '0 20px 60px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.1)',
+                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        margin: 'auto', /* Force center */
+                        pointerEvents: 'auto',
+                        zIndex: 100000
+                    }}>
+                        <div className="settings-modal-header">
+                            <h3>🚀 Super Valuation</h3>
+                            <button className="btn-close-modal" onClick={() => setShowSuperValuationModal(false)}>×</button>
+                        </div>
+
+                        <div style={{ padding: '1.5rem', textAlign: 'center' }}>
+                            <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>⚡</div>
+                            <h4 style={{ color: '#fff', marginBottom: '0.5rem' }}>Valuate {paginatedDomains.length} domains?</h4>
+                            <p style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: '1.5' }}>
+                                This will process all domains on the current page in a single batch request, optimized for speed and efficiency.
+                            </p>
+                        </div>
+
+                        <div className="settings-footer" style={{ justifyContent: 'center', gap: '1rem' }}>
+                            <button
+                                className="btn btn-secondary"
+                                onClick={() => setShowSuperValuationModal(false)}
+                                style={{ padding: '0.6rem 1.2rem' }}
+                            >
+                                Cancel
+                            </button>
+                            <button
+                                className="btn btn-primary"
+                                onClick={handleSuperValuation}
+                                style={{
+                                    padding: '0.6rem 1.5rem',
+                                    background: 'linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%)',
+                                    border: 'none',
+                                    fontWeight: '600'
+                                }}
+                            >
+                                Yes, Start Batch!
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+
             <div className="analysis-card">
                 <div className="analysis-header">
                     <Link to="/" className="btn-home" title="Back to Home">
@@ -1004,6 +1176,39 @@ const DomainAnalysis = () => {
                                     disabled={currentPage === totalPages}
                                 >
                                     ›
+                                </button>
+                                {/* Super Valuation Button */}
+                                <button
+                                    className="btn-super-valuation"
+                                    onClick={() => setShowSuperValuationModal(true)}
+                                    disabled={isSuperValuating || paginatedDomains.length === 0}
+                                    style={{
+                                        marginLeft: '1rem',
+                                        background: 'linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%)',
+                                        color: 'white',
+                                        border: 'none',
+                                        padding: '0.5rem 1rem',
+                                        borderRadius: '8px',
+                                        cursor: 'pointer',
+                                        fontWeight: '600',
+                                        fontSize: '0.85rem',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: '0.4rem',
+                                        boxShadow: '0 4px 6px -1px rgba(139, 92, 246, 0.3)',
+                                        transition: 'all 0.2s ease',
+                                        opacity: isSuperValuating ? 0.7 : 1
+                                    }}
+                                >
+                                    {isSuperValuating ? (
+                                        <>
+                                            <span className="loading-spinner-small"></span> Processing...
+                                        </>
+                                    ) : (
+                                        <>
+                                            <span>⚡</span> Super HumbleWorth Valuation
+                                        </>
+                                    )}
                                 </button>
                                 <button
                                     className="btn-page"
