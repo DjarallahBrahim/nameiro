@@ -45,6 +45,8 @@ const DomainAnalysis = () => {
     const [sortOrder, setSortOrder] = useState(''); // '' (default), 'asc', 'desc'
     const [sortDropdownOpen, setSortDropdownOpen] = useState(false);
 
+    const [scrollDirection, setScrollDirection] = useState('down'); // 'up' | 'down'
+
 
 
     // Search Mode State
@@ -377,8 +379,13 @@ const DomainAnalysis = () => {
         return filteredDomains.slice(start, end);
     }, [filteredDomains, currentPage, itemsPerPage]);
 
-    const goToPage = (page) => {
+    const goToPage = (page, source) => {
         setCurrentPage(Math.max(1, Math.min(page, totalPages)));
+        if (source === 'top') {
+            setScrollDirection('down');
+        } else if (source === 'bottom') {
+            setScrollDirection('up');
+        }
     };
 
     const handleItemsPerPageChange = (newSize) => {
@@ -866,14 +873,14 @@ const DomainAnalysis = () => {
                                 </div>
                                 <button
                                     className="btn-page"
-                                    onClick={() => goToPage(1)}
+                                    onClick={() => goToPage(1, 'top')}
                                     disabled={currentPage === 1}
                                 >
                                     ««
                                 </button>
                                 <button
                                     className="btn-page"
-                                    onClick={() => goToPage(currentPage - 1)}
+                                    onClick={() => goToPage(currentPage - 1, 'top')}
                                     disabled={currentPage === 1}
                                 >
                                     ‹
@@ -883,14 +890,14 @@ const DomainAnalysis = () => {
                                 </span>
                                 <button
                                     className="btn-page"
-                                    onClick={() => goToPage(currentPage + 1)}
+                                    onClick={() => goToPage(currentPage + 1, 'top')}
                                     disabled={currentPage === totalPages}
                                 >
                                     ›
                                 </button>
                                 <button
                                     className="btn-page"
-                                    onClick={() => goToPage(totalPages)}
+                                    onClick={() => goToPage(totalPages, 'top')}
                                     disabled={currentPage === totalPages}
                                 >
                                     »»
@@ -1026,14 +1033,14 @@ const DomainAnalysis = () => {
                                 </div>
                                 <button
                                     className="btn-page"
-                                    onClick={() => goToPage(1)}
+                                    onClick={() => goToPage(1, 'bottom')}
                                     disabled={currentPage === 1}
                                 >
                                     ««
                                 </button>
                                 <button
                                     className="btn-page"
-                                    onClick={() => goToPage(currentPage - 1)}
+                                    onClick={() => goToPage(currentPage - 1, 'bottom')}
                                     disabled={currentPage === 1}
                                 >
                                     ‹
@@ -1043,20 +1050,22 @@ const DomainAnalysis = () => {
                                 </span>
                                 <button
                                     className="btn-page"
-                                    onClick={() => goToPage(currentPage + 1)}
+                                    onClick={() => goToPage(currentPage + 1, 'bottom')}
                                     disabled={currentPage === totalPages}
                                 >
                                     ›
                                 </button>
                                 <button
                                     className="btn-page"
-                                    onClick={() => goToPage(totalPages)}
+                                    onClick={() => goToPage(totalPages, 'bottom')}
                                     disabled={currentPage === totalPages}
                                 >
                                     »»
                                 </button>
                             </div>
                         )}
+
+
 
                         <div className="action-row">
                             <button className="btn-reset" onClick={() => {
@@ -1081,6 +1090,13 @@ const DomainAnalysis = () => {
                 )
                 }
             </div >
+
+            {/* Scroll Hint Icon (Visual Only) - Moved here to escape backdrop-filter stacking context */}
+            {domains.length > 0 && (
+                <div className={`scroll-hint-icon ${scrollDirection}`}>
+                    {scrollDirection === 'down' ? '↓' : '↑'}
+                </div>
+            )}
         </div >
     );
 };

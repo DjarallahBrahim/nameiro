@@ -1,0 +1,50 @@
+/* Scroll Hint Icon */
+.scroll-hint-icon {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #60a5fa;
+    /* Primary blue */
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    /* High Z-Index to stay on top */
+    animation: fadeIn 0.3s ease-out;
+    pointer-events: none;
+    /* Purely visual */
+    transition: all 0.3s ease;
+}
+
+.scroll-hint-icon.up {
+    color: #10b981;
+    /* Green for up/top */
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+.scroll-hint-icon.down {
+    color: #60a5fa;
+    /* Blue for down/content */
+    border-color: rgba(96, 165, 250, 0.3);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
