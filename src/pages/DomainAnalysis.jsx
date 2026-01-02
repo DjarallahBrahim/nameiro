@@ -849,7 +849,54 @@ const DomainAnalysis = () => {
                                 </div>
                             </div>
                         )}
-
+                        {/* Pagination Controls */}
+                        {totalPages > 1 && (
+                            <div className="pagination">
+                                <div className="page-size-selector">
+                                    <label>Per page:</label>
+                                    <select
+                                        value={itemsPerPage}
+                                        onChange={(e) => handleItemsPerPageChange(Number(e.target.value))}
+                                        className="page-size-select"
+                                    >
+                                        <option value={20}>20</option>
+                                        <option value={100}>100</option>
+                                        <option value={200}>200</option>
+                                    </select>
+                                </div>
+                                <button
+                                    className="btn-page"
+                                    onClick={() => goToPage(1)}
+                                    disabled={currentPage === 1}
+                                >
+                                    ««
+                                </button>
+                                <button
+                                    className="btn-page"
+                                    onClick={() => goToPage(currentPage - 1)}
+                                    disabled={currentPage === 1}
+                                >
+                                    ‹
+                                </button>
+                                <span className="page-info">
+                                    Page {currentPage} of {totalPages}
+                                </span>
+                                <button
+                                    className="btn-page"
+                                    onClick={() => goToPage(currentPage + 1)}
+                                    disabled={currentPage === totalPages}
+                                >
+                                    ›
+                                </button>
+                                <button
+                                    className="btn-page"
+                                    onClick={() => goToPage(totalPages)}
+                                    disabled={currentPage === totalPages}
+                                >
+                                    »»
+                                </button>
+                            </div>
+                        )}
                         <div className="domains-list">
                             {paginatedDomains.length > 0 ? (
                                 paginatedDomains.map((domain, index) => (
