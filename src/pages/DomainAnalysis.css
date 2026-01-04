@@ -245,7 +245,7 @@
     color: #e2e8f0;
     font-family: 'Outfit', 'Inter', sans-serif;
     font-weight: 600;
-    font-size: 1.25rem;
+    font-size: 1.45rem;
     letter-spacing: 0.02em;
 }
 
@@ -883,6 +883,14 @@
     gap: 0.5rem;
 }
 
+/* Domain badges container */
+.domain-badges {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+
 .auction-date-badge {
     display: inline-flex;
     align-items: center;
@@ -896,6 +904,21 @@
     font-weight: 500;
     width: fit-content;
 }
+
+.price-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.25rem 0.6rem;
+    background: rgba(34, 197, 94, 0.1);
+    color: #22c55e;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    width: fit-content;
+}
+
 
 .btn-logout {
     background: rgba(239, 68, 68, 0.1);
@@ -943,7 +966,7 @@
 
     /* Domain Name - Larger and more prominent on mobile */
     .domain-name {
-        font-size: 1.3rem;
+        font-size: 1.45rem;
         word-break: break-word;
         line-height: 1.4;
         font-weight: 700;
@@ -1116,26 +1139,82 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
-    /* Pagination - Adjust layout */
+    /* Pagination - Compact mobile layout */
     .pagination {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 1rem;
+    }
+
+    /* Per page selector */
+    .page-size-selector {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         gap: 0.5rem;
-        padding: 0.75rem;
+        padding-bottom: 0.75rem;
+        margin-bottom: 0.75rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .btn-page {
-        padding: 0.4rem 0.8rem;
-        min-width: 40px;
+    .page-size-selector label {
+        font-size: 0.85rem;
+        color: #94a3b8;
+    }
+
+    .page-size-select {
         font-size: 0.9rem;
+        padding: 0.4rem 0.6rem;
     }
 
+    /* Navigation controls container */
+    .pagination-controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        flex-wrap: nowrap;
+    }
+
+    /* Page info - More prominent */
     .page-info {
         font-size: 0.9rem;
+        font-weight: 600;
+        padding: 0.5rem 0.75rem;
+        background: rgba(96, 165, 250, 0.15);
+        border: 1px solid rgba(96, 165, 250, 0.3);
+        border-radius: 8px;
+        white-space: nowrap;
+        color: #60a5fa;
+        flex-shrink: 0;
     }
 
-    /* Hide Super Valuation button text on mobile, show icon only */
+    /* Navigation buttons - Compact and visible */
+    .btn-page {
+        padding: 0.5rem 0.7rem;
+        min-width: 40px;
+        font-size: 1rem;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        flex-shrink: 0;
+    }
+
+    .btn-page:disabled {
+        opacity: 0.25;
+        background: rgba(255, 255, 255, 0.02);
+        border-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .btn-page:not(:disabled):active {
+        transform: scale(0.95);
+        background: rgba(96, 165, 250, 0.2);
+    }
+
+    /* Super Valuation button */
     .btn-super-valuation {
-        font-size: 0.75rem !important;
-        padding: 0.4rem 0.8rem !important;
+        font-size: 0.85rem !important;
+        padding: 0.7rem 1rem !important;
     }
 
     /* Upload Section - Reduce padding */

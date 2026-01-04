@@ -4,6 +4,7 @@ import DomainItem from './DomainItem';
 const DomainList = ({
     paginatedDomains,
     auctionEndResults,
+    priceResults,
     analysisResults,
     analyzingDomains,
     handleAnalyseDomain,
@@ -31,6 +32,7 @@ const DomainList = ({
                         key={index}
                         domain={domainName}
                         auctionEndDate={auctionEndResults[domainName]}
+                        price={priceResults?.[domainName]}
                         analysisResult={analysisResult}
                         isAnalyzing={analyzingDomains[domainName]}
                         onAnalyseHumbleworth={() => handleAnalyseDomain(domainName)}

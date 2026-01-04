@@ -25,6 +25,8 @@ import DomainList from '../components/domain-analysis/DomainList';
 import SettingsModal from '../components/domain-analysis/SettingsModal';
 import SuperValuationModal from '../components/domain-analysis/SuperValuationModal';
 import SuperValuationButton from '../components/domain-analysis/SuperValuationButton';
+import ColumnMappingModal from '../components/domain-analysis/ColumnMappingModal';
+import '../components/domain-analysis/ColumnMappingModal.css';
 
 const DomainAnalysis = () => {
     const { currentUser, login, logout } = useAuth();
@@ -36,12 +38,18 @@ const DomainAnalysis = () => {
         domains,
         originalCount,
         hasAnalyzed,
-        processFile,
+        handleFileUpload,
+        processWithMappings,
         resetDomains,
         auctionEndResults,
+        priceResults,
         hasAuctionData,
         availableAuctionDates,
-        auctionDateCounts
+        auctionDateCounts,
+        showColumnMapping,
+        detectedColumns,
+        suggestedColumnMappings,
+        cancelColumnMapping
     } = useDomainData();
 
     // Filters Hook
@@ -294,7 +302,7 @@ const DomainAnalysis = () => {
                             </div>
                         )}
 
-                        <UploadSection processFile={processFile} />
+                        <UploadSection processFile={handleFileUpload} />
                     </>
                 ) : (
                     <div className="results-section">
@@ -421,6 +429,7 @@ const DomainAnalysis = () => {
                         <DomainList
                             paginatedDomains={displayedPaginatedDomains}
                             auctionEndResults={auctionEndResults}
+                            priceResults={priceResults}
                             analysisResults={analysisResults}
                             analyzingDomains={analyzingDomains}
                             handleAnalyseDomain={handleAnalyseDomain}
@@ -454,6 +463,16 @@ const DomainAnalysis = () => {
                 <div className={`scroll-hint-icon ${scrollDirection}`}>
                     {scrollDirection === 'down' ? '↓' : '↑'}
                 </div>
+            )}
+
+            {/* Column Mapping Modal */}
+            {showColumnMapping && (
+                <ColumnMappingModal
+                    columns={detectedColumns}
+                    suggestedMappings={suggestedColumnMappings}
+                    onConfirm={processWithMappings}
+                    onCancel={cancelColumnMapping}
+                />
             )}
         </div>
     );

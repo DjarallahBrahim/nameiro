@@ -5,6 +5,7 @@ import AtomResults from './AtomResults';
 const DomainItem = ({
     domain,
     auctionEndDate,
+    price,
     analysisResult,
     isAnalyzing,
     onAnalyseHumbleworth,
@@ -25,11 +26,18 @@ const DomainItem = ({
                     >
                         {domain}
                     </a>
-                    {auctionEndDate && (
-                        <span className="auction-date-badge">
-                            📅 {new Date(auctionEndDate).toLocaleDateString()}
-                        </span>
-                    )}
+                    <div className="domain-badges">
+                        {auctionEndDate && (
+                            <span className="auction-date-badge">
+                                📅 {new Date(auctionEndDate).toLocaleDateString()}
+                            </span>
+                        )}
+                        {price !== undefined && price !== null && (
+                            <span className="price-badge">
+                                💰 ${typeof price === 'number' ? price.toLocaleString() : price}
+                            </span>
+                        )}
+                    </div>
                 </div>
 
                 <div className="action-buttons-container">

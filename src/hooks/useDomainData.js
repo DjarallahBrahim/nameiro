@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { parseCSVFile, analyzeColumns, suggestMappings } from '../utils/csvParser';
 
 /**
  * Custom hook for managing domain data and CSV file processing
+ * Now supports dynamic column mapping
  */
 export const useDomainData = () => {
     const [rawDomains, setRawDomains] = useState([]);
@@ -9,101 +11,128 @@ export const useDomainData = () => {
     const [originalCount, setOriginalCount] = useState(0);
     const [hasAnalyzed, setHasAnalyzed] = useState(false);
     const [auctionEndResults, setAuctionEndResults] = useState({});
+    const [priceResults, setPriceResults] = useState({});
     const [hasAuctionData, setHasAuctionData] = useState(false);
     const [availableAuctionDates, setAvailableAuctionDates] = useState([]);
     const [auctionDateCounts, setAuctionDateCounts] = useState({});
 
-    const processFile = (file) => {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-            const text = e.target.result;
-            const lines = text.split(/[\r\n]+/).filter(line => line.trim());
+    // Column mapping states
+    const [showColumnMapping, setShowColumnMapping] = useState(false);
+    const [pendingCSVData, setPendingCSVData] = useState(null);
+    const [detectedColumns, setDetectedColumns] = useState([]);
+    const [suggestedColumnMappings, setSuggestedColumnMappings] = useState(null);
 
-            if (lines.length === 0) return;
+    /**
+     * Initial file upload - analyze columns and show mapping modal
+     */
+    const handleFileUpload = async (file) => {
+        try {
+            const { headers, rows } = await parseCSVFile(file);
 
-            // Find true header row (ignoring metadata lines like "****Auction lists...")
-            let headerRowIndex = 0;
-            let headers = [];
+            // Analyze columns
+            const columns = analyzeColumns(headers, rows);
+            const suggestions = suggestMappings(columns);
 
-            for (let i = 0; i < Math.min(lines.length, 10); i++) {
-                const row = lines[i].toLowerCase();
-                if (row.includes('domain') || row.includes('auction end')) {
-                    headerRowIndex = i;
-                    headers = lines[i].split(',').map(h => h.trim().toLowerCase());
-                    break;
+            // Store data and show mapping modal
+            setPendingCSVData({ headers, rows });
+            setDetectedColumns(columns);
+            setSuggestedColumnMappings(suggestions);
+            setShowColumnMapping(true);
+        } catch (error) {
+            console.error('Error parsing CSV:', error);
+            alert('Failed to parse CSV file. Please check the file format.');
+        }
+    };
+
+    /**
+     * Process CSV with user-selected column mappings
+     */
+    const processWithMappings = (mappings) => {
+        if (!pendingCSVData || !mappings.domainColumn) {
+            alert('Domain column is required');
+            return;
+        }
+
+        const { headers, rows } = pendingCSVData;
+
+        // Find column indices
+        const domainColIndex = headers.indexOf(mappings.domainColumn);
+        const dateColIndex = mappings.dateColumn ? headers.indexOf(mappings.dateColumn) : -1;
+        const priceColIndex = mappings.priceColumn ? headers.indexOf(mappings.priceColumn) : -1;
+
+        const extractedDomains = [];
+        const extractedAuctionDates = {};
+        const extractedPrices = {};
+        let foundAuctionData = false;
+        let foundPriceData = false;
+
+        // Process each row
+        rows.forEach(row => {
+            const domain = row[domainColIndex]?.trim();
+            if (!domain) return;
+
+            extractedDomains.push(domain);
+
+            // Extract date if mapped
+            if (dateColIndex !== -1 && row[dateColIndex]) {
+                const dateStr = row[dateColIndex].trim();
+                const dateObj = new Date(dateStr);
+                if (!isNaN(dateObj.getTime())) {
+                    extractedAuctionDates[domain] = dateObj.getTime();
+                    foundAuctionData = true;
                 }
             }
 
-            // Fallback: if no clear header found, try line 0
-            if (headers.length === 0 && lines.length > 0) {
-                headers = lines[0].split(',').map(h => h.trim().toLowerCase());
-            }
-
-            // Robust header detection
-            const auctionColIndex = headers.findIndex(h =>
-                h === 'auction end' ||
-                h === 'auction end date' ||
-                h.includes('auction end')
-            );
-
-            let domainColIndex = headers.indexOf('domain');
-            if (domainColIndex === -1) domainColIndex = 0;
-
-            const extractedDomains = [];
-            const extractedAuctionDates = {};
-            let foundAuctionData = false;
-
-            const startIdx = headerRowIndex + 1;
-
-            for (let i = startIdx; i < lines.length; i++) {
-                const columns = lines[i].split(',').map(c => c.trim());
-                if (columns[domainColIndex]) {
-                    const domain = columns[domainColIndex].trim();
-                    extractedDomains.push(domain);
-
-                    // Extract Auction End Date if available
-                    if (auctionColIndex !== -1 && columns[auctionColIndex]) {
-                        const dateStr = columns[auctionColIndex].trim();
-                        // robustly parse date
-                        const dateObj = new Date(dateStr);
-                        if (!isNaN(dateObj.getTime())) {
-                            extractedAuctionDates[domain] = dateObj.getTime();
-                            foundAuctionData = true;
-                        }
-                    }
+            // Extract price if mapped
+            if (priceColIndex !== -1 && row[priceColIndex]) {
+                const priceStr = row[priceColIndex].replace(/[$,]/g, '').trim();
+                const price = parseFloat(priceStr);
+                if (!isNaN(price)) {
+                    extractedPrices[domain] = price;
+                    foundPriceData = true;
                 }
             }
+        });
 
-            if (extractedDomains.length > 0) {
-                setRawDomains(extractedDomains);
-                setAuctionEndResults(extractedAuctionDates);
-                setHasAuctionData(foundAuctionData);
+        if (extractedDomains.length > 0) {
+            setRawDomains(extractedDomains);
+            setAuctionEndResults(extractedAuctionDates);
+            setPriceResults(extractedPrices);
+            setHasAuctionData(foundAuctionData);
 
-                // Extract unique dates and counts for the dropdown
-                if (foundAuctionData) {
-                    const uniqueDates = new Set();
-                    const dateCounts = {};
+            // Extract unique dates and counts for the dropdown
+            if (foundAuctionData) {
+                const uniqueDates = new Set();
+                const dateCounts = {};
 
-                    Object.values(extractedAuctionDates).forEach(ts => {
-                        const dateStr = new Date(ts).toLocaleDateString();
-                        uniqueDates.add(dateStr);
-                        dateCounts[dateStr] = (dateCounts[dateStr] || 0) + 1;
-                    });
+                Object.values(extractedAuctionDates).forEach(ts => {
+                    const dateStr = new Date(ts).toLocaleDateString();
+                    uniqueDates.add(dateStr);
+                    dateCounts[dateStr] = (dateCounts[dateStr] || 0) + 1;
+                });
 
-                    // Sort dates chronologically
-                    const sortedDates = Array.from(uniqueDates).sort((a, b) => new Date(a) - new Date(b));
-                    setAvailableAuctionDates(sortedDates);
-                    setAuctionDateCounts(dateCounts);
-                } else {
-                    setAvailableAuctionDates([]);
-                    setAuctionDateCounts({});
-                }
-
-                setOriginalCount(extractedDomains.length);
-                setHasAnalyzed(true);
+                const sortedDates = Array.from(uniqueDates).sort((a, b) => new Date(a) - new Date(b));
+                setAvailableAuctionDates(sortedDates);
+                setAuctionDateCounts(dateCounts);
+            } else {
+                setAvailableAuctionDates([]);
+                setAuctionDateCounts({});
             }
-        };
-        reader.readAsText(file);
+
+            setOriginalCount(extractedDomains.length);
+            setHasAnalyzed(true);
+        }
+
+        // Close modal and clear pending data
+        setShowColumnMapping(false);
+        setPendingCSVData(null);
+    };
+
+    const cancelColumnMapping = () => {
+        setShowColumnMapping(false);
+        setPendingCSVData(null);
+        setDetectedColumns([]);
+        setSuggestedColumnMappings(null);
     };
 
     const resetDomains = () => {
@@ -112,9 +141,12 @@ export const useDomainData = () => {
         setHasAnalyzed(false);
         setOriginalCount(0);
         setAuctionEndResults({});
+        setPriceResults({});
         setHasAuctionData(false);
         setAvailableAuctionDates([]);
         setAuctionDateCounts({});
+        setShowColumnMapping(false);
+        setPendingCSVData(null);
     };
 
     return {
@@ -124,11 +156,18 @@ export const useDomainData = () => {
         setDomains,
         originalCount,
         hasAnalyzed,
-        processFile,
+        handleFileUpload,
+        processWithMappings,
         resetDomains,
         auctionEndResults,
+        priceResults,
         hasAuctionData,
         availableAuctionDates,
-        auctionDateCounts
+        auctionDateCounts,
+        // Column mapping states
+        showColumnMapping,
+        detectedColumns,
+        suggestedColumnMappings,
+        cancelColumnMapping
     };
 };

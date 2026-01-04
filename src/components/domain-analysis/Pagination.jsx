@@ -24,37 +24,40 @@ const Pagination = ({
                     <option value={200}>200</option>
                 </select>
             </div>
-            <button
-                className="btn-page"
-                onClick={() => goToPage(1, source)}
-                disabled={currentPage === 1}
-            >
-                ««
-            </button>
-            <button
-                className="btn-page"
-                onClick={() => goToPage(currentPage - 1, source)}
-                disabled={currentPage === 1}
-            >
-                ‹
-            </button>
-            <span className="page-info">
-                Page {currentPage} of {totalPages}
-            </span>
-            <button
-                className="btn-page"
-                onClick={() => goToPage(currentPage + 1, source)}
-                disabled={currentPage === totalPages}
-            >
-                ›
-            </button>
-            <button
-                className="btn-page"
-                onClick={() => goToPage(totalPages, source)}
-                disabled={currentPage === totalPages}
-            >
-                »»
-            </button>
+
+            <div className="pagination-controls">
+                <button
+                    className="btn-page"
+                    onClick={() => goToPage(1, source)}
+                    disabled={currentPage === 1}
+                >
+                    ««
+                </button>
+                <button
+                    className="btn-page"
+                    onClick={() => goToPage(currentPage - 1, source)}
+                    disabled={currentPage === 1}
+                >
+                    ‹
+                </button>
+                <span className="page-info">
+                    Page {currentPage} of {totalPages}
+                </span>
+                <button
+                    className="btn-page"
+                    onClick={() => goToPage(currentPage + 1, source)}
+                    disabled={currentPage === totalPages}
+                >
+                    ›
+                </button>
+                <button
+                    className="btn-page"
+                    onClick={() => goToPage(totalPages, source)}
+                    disabled={currentPage === totalPages}
+                >
+                    »»
+                </button>
+            </div>
         </div>
     );
 };
