@@ -1,0 +1,338 @@
+/* Batch Progress Tracker */
+.batch-progress-tracker {
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.95));
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.progress-status {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.status-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.status-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #f1f5f9;
+    margin: 0;
+}
+
+.btn-cancel-batch {
+    padding: 0.5rem 1rem;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: 6px;
+    color: #ef4444;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-cancel-batch:hover {
+    background: rgba(239, 68, 68, 0.2);
+    border-color: #ef4444;
+}
+
+/* Progress Bar */
+.progress-bar-container {
+    position: relative;
+    width: 100%;
+    height: 8px;
+    background: rgba(30, 41, 59, 0.8);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
+}
+
+.progress-percentage {
+    text-align: right;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #94a3b8;
+    margin-bottom: 1.5rem;
+}
+
+/* Stats Grid */
+.progress-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.stat-item {
+    padding: 1rem;
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.stat-item.highlight {
+    background: rgba(34, 197, 94, 0.1);
+    border-color: rgba(34, 197, 94, 0.2);
+}
+
+.stat-item.error {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.2);
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.stat-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #f1f5f9;
+}
+
+.stat-value.qualifying {
+    color: #22c55e;
+}
+
+.stat-subtext {
+    font-size: 0.75rem;
+    color: #64748b;
+    margin-top: 0.25rem;
+}
+
+/* Batch Indicator */
+.batch-indicator {
+    margin-bottom: 1.5rem;
+}
+
+.batch-dots {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.batch-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(100, 116, 139, 0.3);
+    border: 2px solid rgba(100, 116, 139, 0.5);
+    transition: all 0.3s ease;
+}
+
+.batch-dot.completed {
+    background: #22c55e;
+    border-color: #22c55e;
+}
+
+.batch-dot.active {
+    background: #60a5fa;
+    border-color: #60a5fa;
+    animation: pulse 1.5s ease-in-out infinite;
+    box-shadow: 0 0 8px rgba(96, 165, 250, 0.6);
+}
+
+.batch-more {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+/* Completion Message */
+.completion-message {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.completion-icon {
+    font-size: 2rem;
+    color: #22c55e;
+}
+
+.completion-text {
+    margin: 0;
+    color: #e2e8f0;
+    line-height: 1.5;
+}
+
+.completion-text strong {
+    color: #22c55e;
+    font-weight: 700;
+}
+
+/* Download Section */
+.download-section {
+    margin-top: 1rem;
+    padding: 1.5rem;
+    background: rgba(96, 165, 250, 0.1);
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.btn-download-csv {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #60a5fa, #3b82f6);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px -1px rgba(96, 165, 250, 0.3);
+}
+
+.btn-download-csv:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px -1px rgba(96, 165, 250, 0.4);
+}
+
+.download-note {
+    margin: 0.75rem 0 0 0;
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+/* Error Details */
+.error-details {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(239, 68, 68, 0.05);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    border-radius: 8px;
+}
+
+.error-summary {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #ef4444;
+    cursor: pointer;
+    user-select: none;
+}
+
+.error-summary:hover {
+    color: #f87171;
+}
+
+.error-list {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.error-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background: rgba(30, 41, 59, 0.5);
+    border-radius: 6px;
+    font-size: 0.85rem;
+}
+
+.error-domain {
+    color: #f1f5f9;
+    font-weight: 600;
+}
+
+.error-message {
+    color: #94a3b8;
+}
+
+.error-more {
+    padding: 0.5rem;
+    text-align: center;
+    color: #64748b;
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .batch-progress-tracker {
+        padding: 1rem;
+    }
+
+    .progress-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .btn-cancel-batch {
+        width: 100%;
+    }
+
+    .progress-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-value {
+        font-size: 1.1rem;
+    }
+
+    .batch-dots {
+        justify-content: center;
+    }
+
+    .completion-message {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .error-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+}

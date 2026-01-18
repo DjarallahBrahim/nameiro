@@ -135,3 +135,7 @@ app.use("/", mainRouter);
 
 
 exports.replicateProxy = onRequest({ region: "us-central1" }, app);
+
+// Batch Analysis Function
+const { processBatchAnalysis } = require('./batchAnalysis');
+exports.processBatchAnalysis = processBatchAnalysis;

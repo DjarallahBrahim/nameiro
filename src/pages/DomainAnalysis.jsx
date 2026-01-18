@@ -27,10 +27,19 @@ import SuperValuationModal from '../components/domain-analysis/SuperValuationMod
 import SuperValuationButton from '../components/domain-analysis/SuperValuationButton';
 import ColumnMappingModal from '../components/domain-analysis/ColumnMappingModal';
 import '../components/domain-analysis/ColumnMappingModal.css';
+import UploadTypeSelector from '../components/domain-analysis/UploadTypeSelector';
+import '../components/domain-analysis/UploadTypeSelector.css';
+import BatchProgressTracker from '../components/domain-analysis/BatchProgressTracker';
+import '../components/domain-analysis/BatchProgressTracker.css';
 
 const DomainAnalysis = () => {
     const { currentUser, login, logout } = useAuth();
     const navigate = useNavigate();
+
+    // Upload Type State
+    const [uploadType, setUploadType] = useState('manual'); // 'manual' or 'automatic'
+    const [minMarketplaceValue, setMinMarketplaceValue] = useState(0);
+    const [batchJobData, setBatchJobData] = useState(null);
 
     // Domain Data Hook
     const {
@@ -49,7 +58,9 @@ const DomainAnalysis = () => {
         showColumnMapping,
         detectedColumns,
         suggestedColumnMappings,
-        cancelColumnMapping
+        cancelColumnMapping,
+        startBatchAnalysis,
+        subscribeToBatchJob
     } = useDomainData();
 
     // Filters Hook
@@ -165,6 +176,93 @@ const DomainAnalysis = () => {
             setAnalysisResults(prev => ({ ...prev, ...savedResults }));
         }
     }, [showFavoritesOnly, favorites, setAnalysisResults]);
+
+    // Handle column mapping confirmation - route to manual or automatic
+    const handleColumnMappingConfirm = async (mappings) => {
+        console.log('Column mapping confirmed. Upload type:', uploadType);
+
+        if (uploadType === 'automatic') {
+            console.log('Starting automatic batch analysis...');
+
+            // DON'T call processWithMappings - it would show manual analysis view
+            // Just close the modal manually
+            cancelColumnMapping();
+
+            // Check for API token
+            if (!humbleworthToken) {
+                alert('Please configure your HumbleWorth API token in settings first');
+                return;
+            }
+
+            try {
+                console.log('Calling startBatchAnalysis with mappings:', mappings);
+
+                // Start batch analysis with user-selected column mappings
+                const result = await startBatchAnalysis(mappings, minMarketplaceValue, humbleworthToken);
+
+                console.log('Batch analysis started:', result);
+
+                if (result.jobId) {
+                    // Subscribe to progress updates
+                    const unsubscribe = subscribeToBatchJob(result.jobId, (jobData) => {
+                        console.log('Job progress update:', jobData);
+                        setBatchJobData(jobData);
+
+                        // If completed, show download button
+                        if (jobData.status === 'completed' && jobData.downloadUrl) {
+                            console.log('Job completed! Download URL:', jobData.downloadUrl);
+                        }
+                    });
+
+                    // Store unsubscribe function for cleanup
+                    return unsubscribe;
+                }
+            } catch (error) {
+                console.error('Automatic analysis failed:', error);
+                alert(`Automatic analysis failed: ${error.message}`);
+                setBatchJobData(null);
+            }
+        } else {
+            console.log('Manual mode - processing normally');
+            // Manual mode - just process and display (closes modal automatically)
+            processWithMappings(mappings);
+        }
+    };
+
+    // Handle automatic batch analysis (legacy - now handled in handleColumnMappingConfirm)
+    const handleAutomaticAnalysis = async () => {
+        if (uploadType !== 'automatic') return;
+
+        if (!humbleworthToken) {
+            alert('Please configure your HumbleWorth API token in settings first');
+            return;
+        }
+
+        try {
+            // Start batch analysis
+            const result = await startBatchAnalysis(minMarketplaceValue, humbleworthToken);
+
+            if (result.jobId) {
+                // Subscribe to progress updates
+                const unsubscribe = subscribeToBatchJob(result.jobId, (jobData) => {
+                    setBatchJobData(jobData);
+
+                    // If completed, show download button
+                    if (jobData.status === 'completed' && jobData.downloadUrl) {
+                        // Auto-download or show download button
+                        console.log('Download URL:', jobData.downloadUrl);
+                    }
+                });
+
+                // Store unsubscribe function for cleanup
+                return unsubscribe;
+            }
+        } catch (error) {
+            console.error('Automatic analysis failed:', error);
+            alert(`Automatic analysis failed: ${error.message}`);
+            setBatchJobData(null);
+        }
+    };
 
     // Super Valuation Modal State
     const [showSuperValuationModal, setShowSuperValuationModal] = useState(false);
@@ -300,6 +398,25 @@ const DomainAnalysis = () => {
                                     View My Saved Favorites ({favorites.length})
                                 </button>
                             </div>
+                        )}
+
+                        {/* Upload Type Selector */}
+                        <UploadTypeSelector
+                            uploadType={uploadType}
+                            onUploadTypeChange={setUploadType}
+                            minMarketplaceValue={minMarketplaceValue}
+                            onMinMarketplaceValueChange={setMinMarketplaceValue}
+                        />
+
+                        {/* Batch Progress Tracker (shown during automatic processing) */}
+                        {batchJobData && (
+                            <BatchProgressTracker
+                                jobData={batchJobData}
+                                onCancel={() => {
+                                    // TODO: Implement cancel logic
+                                    setBatchJobData(null);
+                                }}
+                            />
                         )}
 
                         <UploadSection processFile={handleFileUpload} />
@@ -470,7 +587,7 @@ const DomainAnalysis = () => {
                 <ColumnMappingModal
                     columns={detectedColumns}
                     suggestedMappings={suggestedColumnMappings}
-                    onConfirm={processWithMappings}
+                    onConfirm={handleColumnMappingConfirm}
                     onCancel={cancelColumnMapping}
                 />
             )}

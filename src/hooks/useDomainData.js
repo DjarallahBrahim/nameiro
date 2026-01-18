@@ -135,6 +135,56 @@ export const useDomainData = () => {
         setSuggestedColumnMappings(null);
     };
 
+    /**
+     * Start automatic batch analysis via Firebase Function
+     */
+    const startBatchAnalysis = async (mappings, minMarketplaceValue, humbleworthToken) => {
+        if (!pendingCSVData) {
+            throw new Error('No CSV data to process');
+        }
+
+        const { getFunctions, httpsCallable } = await import('firebase/functions');
+        const { db } = await import('../firebase');
+
+        const functions = getFunctions();
+        const processBatchAnalysis = httpsCallable(functions, 'processBatchAnalysis');
+
+        const { headers, rows } = pendingCSVData;
+
+        try {
+            const result = await processBatchAnalysis({
+                csvData: rows,
+                csvHeaders: headers, // Send actual CSV headers
+                columnMappings: mappings, // Use actual user-selected mappings
+                minMarketplaceValue,
+                apiKey: humbleworthToken
+            });
+
+            return result.data;
+        } catch (error) {
+            console.error('Batch analysis failed:', error);
+            throw error;
+        }
+    };
+
+    /**
+     * Subscribe to batch job progress updates
+     */
+    const subscribeToBatchJob = async (jobId, onUpdate) => {
+        const { doc, onSnapshot } = await import('firebase/firestore');
+        const { db } = await import('../firebase');
+
+        const jobRef = doc(db, 'batchJobs', jobId);
+
+        const unsubscribe = onSnapshot(jobRef, (snapshot) => {
+            if (snapshot.exists()) {
+                onUpdate(snapshot.data());
+            }
+        });
+
+        return unsubscribe;
+    };
+
     const resetDomains = () => {
         setDomains([]);
         setRawDomains([]);
@@ -168,6 +218,9 @@ export const useDomainData = () => {
         showColumnMapping,
         detectedColumns,
         suggestedColumnMappings,
-        cancelColumnMapping
+        cancelColumnMapping,
+        // Batch analysis methods
+        startBatchAnalysis,
+        subscribeToBatchJob
     };
 };
