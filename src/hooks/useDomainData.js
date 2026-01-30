@@ -59,12 +59,18 @@ export const useDomainData = () => {
         const domainColIndex = headers.indexOf(mappings.domainColumn);
         const dateColIndex = mappings.dateColumn ? headers.indexOf(mappings.dateColumn) : -1;
         const priceColIndex = mappings.priceColumn ? headers.indexOf(mappings.priceColumn) : -1;
+        const marketplaceColIndex = mappings.marketplaceColumn ? headers.indexOf(mappings.marketplaceColumn) : -1;
+        const brokerageColIndex = mappings.brokerageColumn ? headers.indexOf(mappings.brokerageColumn) : -1;
+        const auctionColIndex = mappings.auctionColumn ? headers.indexOf(mappings.auctionColumn) : -1;
 
         const extractedDomains = [];
         const extractedAuctionDates = {};
         const extractedPrices = {};
+        const preloadedAnalysis = {};
+
         let foundAuctionData = false;
         let foundPriceData = false;
+        let foundAnalysisData = false;
 
         // Process each row
         rows.forEach(row => {
@@ -91,6 +97,39 @@ export const useDomainData = () => {
                     extractedPrices[domain] = price;
                     foundPriceData = true;
                 }
+            }
+
+            // Extract Pre-calculated Values
+            const analysisData = {};
+            let hasAnalysis = false;
+
+            if (marketplaceColIndex !== -1 && row[marketplaceColIndex]) {
+                const val = parseFloat(row[marketplaceColIndex].replace(/[$,]/g, '').trim());
+                if (!isNaN(val)) {
+                    analysisData.marketplace = val;
+                    hasAnalysis = true;
+                }
+            }
+
+            if (brokerageColIndex !== -1 && row[brokerageColIndex]) {
+                const val = parseFloat(row[brokerageColIndex].replace(/[$,]/g, '').trim());
+                if (!isNaN(val)) {
+                    analysisData.brokerage = val;
+                    hasAnalysis = true;
+                }
+            }
+
+            if (auctionColIndex !== -1 && row[auctionColIndex]) {
+                const val = parseFloat(row[auctionColIndex].replace(/[$,]/g, '').trim());
+                if (!isNaN(val)) {
+                    analysisData.auction = val;
+                    hasAnalysis = true;
+                }
+            }
+
+            if (hasAnalysis) {
+                preloadedAnalysis[domain] = analysisData;
+                foundAnalysisData = true;
             }
         });
 
@@ -126,6 +165,12 @@ export const useDomainData = () => {
         // Close modal and clear pending data
         setShowColumnMapping(false);
         setPendingCSVData(null);
+
+        // Return extracted data for external use (e.g. populating analysisResults)
+        return {
+            preloadedAnalysis,
+            hasPreloadedAnalysis: foundAnalysisData
+        };
     };
 
     const cancelColumnMapping = () => {

@@ -94,6 +94,67 @@ const ColumnMappingModal = ({
                         </select>
                     </div>
 
+                    <div className="mapping-section-divider">
+                        <span>Pre-calculated Values (Optional)</span>
+                    </div>
+
+                    {/* Marketplace Value Mapping */}
+                    <div className="mapping-field">
+                        <label className="mapping-label">
+                            Marketplace Value <span className="optional-badge">Optional</span>
+                        </label>
+                        <select
+                            className="mapping-select"
+                            value={mappings.marketplaceColumn || ''}
+                            onChange={(e) => handleMappingChange('marketplaceColumn', e.target.value)}
+                        >
+                            <option value="">-- None --</option>
+                            {numberColumns.map(col => (
+                                <option key={col.name} value={col.name}>
+                                    {col.name} {col.sample.length > 0 && `(e.g., ${col.sample[0]})`}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+
+                    {/* Brokerage Value Mapping */}
+                    <div className="mapping-field">
+                        <label className="mapping-label">
+                            Brokerage Value <span className="optional-badge">Optional</span>
+                        </label>
+                        <select
+                            className="mapping-select"
+                            value={mappings.brokerageColumn || ''}
+                            onChange={(e) => handleMappingChange('brokerageColumn', e.target.value)}
+                        >
+                            <option value="">-- None --</option>
+                            {numberColumns.map(col => (
+                                <option key={col.name} value={col.name}>
+                                    {col.name} {col.sample.length > 0 && `(e.g., ${col.sample[0]})`}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+
+                    {/* Auction Value Mapping */}
+                    <div className="mapping-field">
+                        <label className="mapping-label">
+                            Auction Value <span className="optional-badge">Optional</span>
+                        </label>
+                        <select
+                            className="mapping-select"
+                            value={mappings.auctionColumn || ''}
+                            onChange={(e) => handleMappingChange('auctionColumn', e.target.value)}
+                        >
+                            <option value="">-- None --</option>
+                            {numberColumns.map(col => (
+                                <option key={col.name} value={col.name}>
+                                    {col.name} {col.sample.length > 0 && `(e.g., ${col.sample[0]})`}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+
                     {/* Preview Section */}
                     <div className="column-preview">
                         <h3>Detected Columns ({columns.length})</h3>

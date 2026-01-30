@@ -21,6 +21,11 @@ const FilterGroup = ({
     setSortOrder,
     sortDropdownOpen,
     setSortDropdownOpen,
+    // Price Sort
+    priceSort,
+    setPriceSort,
+    priceDropdownOpen,
+    setPriceDropdownOpen,
     // Visibility
     domainsLength
 }) => {
@@ -163,6 +168,43 @@ const FilterGroup = ({
                                     onClick={() => {
                                         setSortOrder(option.value);
                                         setSortDropdownOpen(false);
+                                    }}
+                                >
+                                    <span className="extension-name">{option.label}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
+            </div>
+
+            {/* Market Place Price Sort Dropdown */}
+            <div className="extension-filter-dropdown">
+                <button
+                    className="extension-dropdown-toggle"
+                    onClick={() => setPriceDropdownOpen(!priceDropdownOpen)}
+                >
+                    <span className="dropdown-label">Market Place:</span>
+                    <span className="dropdown-selected-count">
+                        {priceSort === 'asc' ? 'Low to High' : priceSort === 'desc' ? 'High to Low' : 'Default'}
+                    </span>
+                    <span className="dropdown-arrow">{priceDropdownOpen ? '▲' : '▼'}</span>
+                </button>
+
+                {priceDropdownOpen && (
+                    <div className="extension-dropdown-content">
+                        <div className="extension-chips-grid">
+                            {[
+                                { label: 'Default', value: '' },
+                                { label: 'Low to High', value: 'asc' },
+                                { label: 'High to Low', value: 'desc' }
+                            ].map(option => (
+                                <div
+                                    key={option.value}
+                                    className={`extension-checkbox-item ${priceSort === option.value ? 'selected' : ''}`}
+                                    onClick={() => {
+                                        setPriceSort(option.value);
+                                        setPriceDropdownOpen(false);
                                     }}
                                 >
                                     <span className="extension-name">{option.label}</span>

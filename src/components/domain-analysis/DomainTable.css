@@ -1,0 +1,440 @@
+/* Domain Table Container */
+.domain-table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin: 2rem 0;
+    border-radius: 16px;
+    background: rgba(15, 23, 42, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Table Base Styles */
+.domain-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.9rem;
+}
+
+/* Table Header */
+.domain-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95));
+    backdrop-filter: blur(10px);
+}
+
+.domain-table th {
+    padding: 1rem 0.75rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #94a3b8;
+    border-bottom: 2px solid rgba(96, 165, 250, 0.3);
+    white-space: nowrap;
+}
+
+/* Sortable column headers */
+.th-sortable {
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.th-sortable:hover {
+    color: #60a5fa;
+    background: rgba(96, 165, 250, 0.1);
+}
+
+/* Sort icons */
+.sort-icon {
+    display: inline-block;
+    margin-left: 0.35rem;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+}
+
+.sort-icon-inactive {
+    color: rgba(148, 163, 184, 0.4);
+}
+
+.sort-icon-asc,
+.sort-icon-desc {
+    color: #60a5fa;
+    font-weight: bold;
+}
+
+.th-sortable:hover .sort-icon-inactive {
+    color: rgba(96, 165, 250, 0.6);
+}
+
+
+/* Column-specific widths */
+.th-domain {
+    min-width: 200px;
+    padding-left: 1.5rem;
+}
+
+.th-auction {
+    min-width: 100px;
+}
+
+.th-price {
+    min-width: 90px;
+}
+
+.th-hw-market,
+.th-hw-broker,
+.th-hw-auction,
+.th-atom-value {
+    min-width: 100px;
+    text-align: right;
+    padding-right: 1rem;
+}
+
+.th-atom-score {
+    min-width: 70px;
+    text-align: center;
+}
+
+.th-tlds,
+.th-age {
+    min-width: 60px;
+    text-align: center;
+}
+
+.th-actions {
+    min-width: 130px;
+    text-align: center;
+    padding-right: 1.5rem;
+}
+
+/* Table Body Rows */
+.domain-table tbody tr {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.3), rgba(15, 23, 42, 0.3));
+    border-bottom: 1px solid rgba(100, 116, 139, 0.1);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.domain-table tbody tr:nth-child(even) {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.2), rgba(15, 23, 42, 0.2));
+}
+
+
+
+/* Table Cells */
+.domain-table td {
+    padding: 0.875rem 0.75rem;
+    color: #e2e8f0;
+    vertical-align: middle;
+}
+
+/* Domain Name Cell */
+.td-domain {
+    padding-left: 1.5rem;
+    font-weight: 600;
+}
+
+.domain-link {
+    color: #e2e8f0;
+    text-decoration: none;
+    font-family: 'Outfit', 'Inter', sans-serif;
+    font-size: 1rem;
+    transition: all 0.2s;
+    display: inline-block;
+}
+
+.domain-link:hover {
+    color: #60a5fa;
+    transform: translateX(2px);
+}
+
+/* Badges */
+.table-badge {
+    display: inline-block;
+    padding: 0.25rem 0.625rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.auction-badge {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.price-badge {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+/* Value Cells */
+.value-cell {
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.hw-value {
+    color: #e2e8f0;
+}
+
+.hw-value-primary {
+    color: #a78bfa;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.atom-value {
+    color: #60a5fa;
+    font-weight: 700;
+}
+
+.atom-score {
+    color: #fbbf24;
+    font-weight: 700;
+}
+
+/* Align value columns to the right */
+.td-hw-market,
+.td-hw-broker,
+.td-hw-auction,
+.td-atom-value {
+    text-align: right;
+    padding-right: 1rem;
+}
+
+.td-atom-score,
+.td-tlds,
+.td-age {
+    text-align: center;
+}
+
+/* Actions Column */
+.td-actions {
+    padding-right: 1.5rem;
+}
+
+.table-actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.table-action-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 0.95rem;
+    padding: 0;
+    line-height: 1;
+}
+
+.table-action-btn:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+}
+
+.table-action-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none !important;
+    filter: grayscale(1);
+}
+
+/* Atom Button */
+.table-action-btn.atom-btn {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+}
+
+.table-action-btn.atom-btn:hover {
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+/* Humbleworth Button */
+.table-action-btn.humble-btn {
+    background: linear-gradient(135deg, #fbbf24, #d97706);
+    color: #1e293b;
+}
+
+.table-action-btn.humble-btn:hover {
+    box-shadow: 0 0 15px rgba(251, 191, 36, 0.5);
+}
+
+/* Favorite Button */
+.table-action-btn.favorite-btn {
+    background: rgba(100, 116, 139, 0.2);
+    color: white;
+    border: 1px solid rgba(100, 116, 139, 0.3);
+}
+
+.table-action-btn.favorite-btn:hover {
+    background: rgba(100, 116, 139, 0.3);
+    box-shadow: 0 0 15px rgba(100, 116, 139, 0.3);
+}
+
+.table-action-btn.favorite-btn.is-favorite {
+    background: rgba(239, 68, 68, 0.2);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    animation: heartbeat 0.3s ease;
+}
+
+.table-action-btn.favorite-btn.is-favorite:hover {
+    background: rgba(239, 68, 68, 0.3);
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+    .domain-table {
+        font-size: 0.85rem;
+    }
+
+    .domain-table th,
+    .domain-table td {
+        padding: 0.75rem 0.5rem;
+    }
+
+    .th-domain,
+    .td-domain {
+        padding-left: 1rem;
+    }
+
+    .th-actions,
+    .td-actions {
+        padding-right: 1rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .domain-table-container {
+        border-radius: 12px;
+    }
+
+    .domain-table {
+        font-size: 0.8rem;
+    }
+
+    .table-action-btn {
+        width: 26px;
+        height: 26px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Scrollbar Styling */
+.domain-table-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.domain-table-container::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.5);
+    border-radius: 4px;
+}
+
+.domain-table-container::-webkit-scrollbar-thumb {
+    background: rgba(96, 165, 250, 0.3);
+    border-radius: 4px;
+}
+
+.domain-table-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(96, 165, 250, 0.5);
+}
+
+/* Domain Cell Content Wrapper */
+.domain-cell-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Copy Button */
+.btn-copy-domain {
+    background: transparent;
+    border: none;
+    color: #64748b;
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 0.4rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    /* Hidden by default */
+    transform: translateX(-5px);
+    width: 28px;
+    height: 28px;
+}
+
+/* Show button on row hover or focus */
+.domain-row:hover .btn-copy-domain,
+.btn-copy-domain:focus,
+.btn-copy-domain.copied {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.btn-copy-domain:hover {
+    background: rgba(148, 163, 184, 0.15);
+    color: #e2e8f0;
+    transform: scale(1.1);
+}
+
+/* Copied State */
+.btn-copy-domain.copied {
+    color: #4ade80;
+    background: rgba(34, 197, 94, 0.1);
+}
+
+.check-icon {
+    display: none;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.btn-copy-domain.copied .copy-icon {
+    display: none;
+}
+
+.btn-copy-domain.copied .check-icon {
+    display: block;
+    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

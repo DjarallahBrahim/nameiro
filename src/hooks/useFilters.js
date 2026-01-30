@@ -3,7 +3,7 @@ import { useState, useMemo, useEffect } from 'react';
 /**
  * Custom hook for managing all filtering logic
  */
-export const useFilters = (rawDomains, auctionEndResults, hasAuctionData) => {
+export const useFilters = (rawDomains, auctionEndResults, hasAuctionData, priceResults = {}, analysisResults = {}) => {
     // Content filters
     const [excludeNumbers, setExcludeNumbers] = useState(true);
     const [excludeHyphens, setExcludeHyphens] = useState(true);
@@ -29,6 +29,13 @@ export const useFilters = (rawDomains, auctionEndResults, hasAuctionData) => {
     // Sort order
     const [sortOrder, setSortOrder] = useState('');
     const [sortDropdownOpen, setSortDropdownOpen] = useState(false);
+
+    // Price sort
+    const [priceSort, setPriceSort] = useState('');
+    const [priceDropdownOpen, setPriceDropdownOpen] = useState(false);
+
+    // Column sorting
+    const [columnSort, setColumnSort] = useState({ column: null, direction: null }); // { column: 'price' | 'hwMarket' | etc., direction: 'asc' | 'desc' }
 
     // Base filtered domains (after content filters)
     const domains = useMemo(() => {
@@ -132,8 +139,89 @@ export const useFilters = (rawDomains, auctionEndResults, hasAuctionData) => {
             filtered = [...filtered].sort((a, b) => b.length - a.length);
         }
 
+        // Apply Price Sorting
+        if (priceSort === 'asc') {
+            // Low to High - domains without price go to the end
+            filtered = [...filtered].sort((a, b) => {
+                const priceA = priceResults[a];
+                const priceB = priceResults[b];
+                if (priceA === undefined && priceB === undefined) return 0;
+                if (priceA === undefined) return 1;
+                if (priceB === undefined) return -1;
+                return priceA - priceB;
+            });
+        } else if (priceSort === 'desc') {
+            // High to Low - domains without price go to the end
+            filtered = [...filtered].sort((a, b) => {
+                const priceA = priceResults[a];
+                const priceB = priceResults[b];
+                if (priceA === undefined && priceB === undefined) return 0;
+                if (priceA === undefined) return 1;
+                if (priceB === undefined) return -1;
+                return priceB - priceA;
+            });
+        }
+
+        // Apply Column Sorting (takes precedence over other sorting)
+        if (columnSort.column && columnSort.direction) {
+            filtered = [...filtered].sort((a, b) => {
+                let valueA, valueB;
+
+                // Get values based on column
+                switch (columnSort.column) {
+                    case 'price':
+                        valueA = priceResults[a];
+                        valueB = priceResults[b];
+                        break;
+                    case 'hwMarket':
+                        valueA = analysisResults[a]?.marketplace;
+                        valueB = analysisResults[b]?.marketplace;
+                        break;
+                    case 'hwBroker':
+                        valueA = analysisResults[a]?.brokerage;
+                        valueB = analysisResults[b]?.brokerage;
+                        break;
+                    case 'hwAuction':
+                        valueA = analysisResults[a]?.auction;
+                        valueB = analysisResults[b]?.auction;
+                        break;
+                    case 'atomValue':
+                        valueA = analysisResults[a]?.atom?.atom_appraisal;
+                        valueB = analysisResults[b]?.atom?.atom_appraisal;
+                        break;
+                    case 'atomScore':
+                        valueA = analysisResults[a]?.atom?.domain_score;
+                        valueB = analysisResults[b]?.atom?.domain_score;
+                        break;
+                    case 'tlds':
+                        valueA = analysisResults[a]?.atom?.tld_taken_count;
+                        valueB = analysisResults[b]?.atom?.tld_taken_count;
+                        break;
+                    case 'age':
+                        const dateA = analysisResults[a]?.atom?.date_registered;
+                        const dateB = analysisResults[b]?.atom?.date_registered;
+                        valueA = dateA ? new Date().getFullYear() - new Date(dateA).getFullYear() : undefined;
+                        valueB = dateB ? new Date().getFullYear() - new Date(dateB).getFullYear() : undefined;
+                        break;
+                    default:
+                        return 0;
+                }
+
+                // Helper to check if value is valid number
+                const isValidA = valueA !== undefined && valueA !== null && !isNaN(Number(valueA));
+                const isValidB = valueB !== undefined && valueB !== null && !isNaN(Number(valueB));
+
+                if (!isValidA && !isValidB) return 0;
+                if (!isValidA) return 1;
+                if (!isValidB) return -1;
+
+                // Sort based on direction
+                return columnSort.direction === 'asc' ? valueA - valueB : valueB - valueA;
+            });
+        }
+
         return filtered;
-    }, [domains, searchQuery, selectedExtensions, selectedAuctionDate, hasAuctionData, auctionEndResults, sortOrder, searchMode, blockQuery, blockMode]);
+    }, [domains, searchQuery, selectedExtensions, selectedAuctionDate, hasAuctionData, auctionEndResults, sortOrder, searchMode, blockQuery, blockMode, priceSort, priceResults, columnSort, analysisResults]);
 
     return {
         // Content filters
@@ -173,6 +261,16 @@ export const useFilters = (rawDomains, auctionEndResults, hasAuctionData) => {
         setSortOrder,
         sortDropdownOpen,
         setSortDropdownOpen,
+
+        // Price Sort
+        priceSort,
+        setPriceSort,
+        priceDropdownOpen,
+        setPriceDropdownOpen,
+
+        // Column Sort
+        columnSort,
+        setColumnSort,
 
         // Computed
         domains,

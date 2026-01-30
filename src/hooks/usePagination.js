@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 
 /**
  * Custom hook for managing pagination state and logic
@@ -15,6 +15,12 @@ export const usePagination = (filteredDomains) => {
         const end = start + itemsPerPage;
         return filteredDomains.slice(start, end);
     }, [filteredDomains, currentPage, itemsPerPage]);
+
+    // Reset to page 1 when the number of filtered domains changes (e.g. searching, filtering)
+    // But NOT when just sorting or analysis results update
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [filteredDomains.length]);
 
     const goToPage = (page, source) => {
         setCurrentPage(Math.max(1, Math.min(page, totalPages)));

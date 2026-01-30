@@ -64,7 +64,10 @@ export const suggestMappings = (columns) => {
     const suggestions = {
         domainColumn: null,
         dateColumn: null,
-        priceColumn: null
+        priceColumn: null,
+        marketplaceColumn: null,
+        brokerageColumn: null,
+        auctionColumn: null
     };
 
     // Domain column - look for text columns with domain-like names
@@ -76,7 +79,7 @@ export const suggestMappings = (columns) => {
     suggestions.domainColumn = domainColumn?.name || columns.find(c => c.type === 'text')?.name || null;
 
     // Date column - look for date columns with auction/end keywords
-    const dateKeywords = ['date', 'end', 'auction', 'expir', 'close'];
+    const dateKeywords = ['date', 'end', 'expir', 'close'];
     const dateColumn = columns.find(col =>
         col.type === 'date' &&
         dateKeywords.some(keyword => col.name.toLowerCase().includes(keyword))
@@ -84,12 +87,40 @@ export const suggestMappings = (columns) => {
     suggestions.dateColumn = dateColumn?.name || columns.find(c => c.type === 'date')?.name || null;
 
     // Price column - look for number columns with price/bid keywords
-    const priceKeywords = ['price', 'bid', 'amount', 'value', 'cost', 'usd', 'eur'];
+    const priceKeywords = ['price', 'bid', 'cost', 'usd', 'eur'];
     const priceColumn = columns.find(col =>
         col.type === 'number' &&
-        priceKeywords.some(keyword => col.name.toLowerCase().includes(keyword))
+        priceKeywords.some(keyword => col.name.toLowerCase().includes(keyword)) &&
+        !col.name.toLowerCase().includes('market') &&
+        !col.name.toLowerCase().includes('broker')
     );
     suggestions.priceColumn = priceColumn?.name || columns.find(c => c.type === 'number')?.name || null;
+
+    // Marketplace Value
+    const marketKeywords = ['marketplace', 'market'];
+    const marketColumn = columns.find(col =>
+        col.type === 'number' &&
+        marketKeywords.some(keyword => col.name.toLowerCase().includes(keyword))
+    );
+    suggestions.marketplaceColumn = marketColumn?.name || null;
+
+    // Brokerage Value
+    const brokerKeywords = ['brokerage', 'broker'];
+    const brokerColumn = columns.find(col =>
+        col.type === 'number' &&
+        brokerKeywords.some(keyword => col.name.toLowerCase().includes(keyword))
+    );
+    suggestions.brokerageColumn = brokerColumn?.name || null;
+
+    // Auction Value (Humbleworth)
+    // Be careful not to confuse with "Auction Date" or just "Date"
+    // Usually "Auction Value" or "Auction Price"
+    const auctionValueKeywords = ['auction'];
+    const auctionValueColumn = columns.find(col =>
+        col.type === 'number' &&
+        auctionValueKeywords.some(keyword => col.name.toLowerCase().includes(keyword))
+    );
+    suggestions.auctionColumn = auctionValueColumn?.name || null;
 
     return suggestions;
 };

@@ -63,6 +63,28 @@ const DomainAnalysis = () => {
         subscribeToBatchJob
     } = useDomainData();
 
+    // Settings Hook
+    const {
+        atomCredentials,
+        setAtomCredentials,
+        humbleworthToken,
+        setHumbleworthToken,
+        showAtomSettings,
+        setShowAtomSettings,
+        handleSaveSettings
+    } = useSettings(currentUser);
+
+    // Analysis Hook
+    const {
+        analysisResults,
+        setAnalysisResults,
+        analyzingDomains,
+        handleAnalyseDomain,
+        handleAnalyseAtom,
+        handleSuperValuation,
+        isSuperValuating
+    } = useAnalysis(humbleworthToken, atomCredentials);
+
     // Filters Hook
     const {
         excludeNumbers,
@@ -91,30 +113,14 @@ const DomainAnalysis = () => {
         setSortOrder,
         sortDropdownOpen,
         setSortDropdownOpen,
+        priceSort,
+        setPriceSort,
+        priceDropdownOpen,
+        setPriceDropdownOpen,
+        columnSort,
+        setColumnSort,
         filteredDomains
-    } = useFilters(rawDomains, auctionEndResults, hasAuctionData);
-
-    // Settings Hook
-    const {
-        atomCredentials,
-        setAtomCredentials,
-        humbleworthToken,
-        setHumbleworthToken,
-        showAtomSettings,
-        setShowAtomSettings,
-        handleSaveSettings
-    } = useSettings(currentUser);
-
-    // Analysis Hook
-    const {
-        analysisResults,
-        setAnalysisResults,
-        analyzingDomains,
-        handleAnalyseDomain,
-        handleAnalyseAtom,
-        handleSuperValuation,
-        isSuperValuating
-    } = useAnalysis(humbleworthToken, atomCredentials);
+    } = useFilters(rawDomains, auctionEndResults, hasAuctionData, priceResults, analysisResults);
 
     // Pagination Hook
     const {
@@ -144,6 +150,17 @@ const DomainAnalysis = () => {
         ? favorites  // Use favorites array directly from Firebase
         : filteredDomains;  // Use filtered domains from current CSV
 
+    // Favorites Copied State
+    const [favoritesCopied, setFavoritesCopied] = useState(false);
+
+    // Copy all favorites to clipboard
+    const handleCopyFavorites = () => {
+        const textToCopy = favorites.map(f => f.domain).join('\n');
+        navigator.clipboard.writeText(textToCopy);
+        setFavoritesCopied(true);
+        setTimeout(() => setFavoritesCopied(false), 2000);
+    };
+
     // Recalculate pagination for displayed domains
     const displayedPaginatedDomains = React.useMemo(() => {
         const start = (currentPage - 1) * itemsPerPage;
@@ -157,6 +174,11 @@ const DomainAnalysis = () => {
     React.useEffect(() => {
         setCurrentPage(1);
     }, [showFavoritesOnly, setCurrentPage]);
+
+    // Reset to page 1 when sorting changes
+    React.useEffect(() => {
+        setCurrentPage(1);
+    }, [columnSort, setCurrentPage]);
 
     // Load saved analysis results from favorites when in favorites mode
     React.useEffect(() => {
@@ -225,7 +247,16 @@ const DomainAnalysis = () => {
         } else {
             console.log('Manual mode - processing normally');
             // Manual mode - just process and display (closes modal automatically)
-            processWithMappings(mappings);
+            const result = processWithMappings(mappings);
+
+            // Import pre-calculated analysis data if available
+            if (result && result.hasPreloadedAnalysis) {
+                console.log('Importing pre-calculated analysis data from CSV');
+                setAnalysisResults(prev => ({
+                    ...prev,
+                    ...result.preloadedAnalysis
+                }));
+            }
         }
     };
 
@@ -423,30 +454,8 @@ const DomainAnalysis = () => {
                     </>
                 ) : (
                     <div className="results-section">
-                        {/* Favorites Mode Banner */}
-                        {showFavoritesOnly && (
-                            <div style={{
-                                background: 'linear-gradient(135deg, rgba(236, 72, 153, 0.2), rgba(190, 24, 93, 0.2))',
-                                border: '1px solid rgba(236, 72, 153, 0.3)',
-                                borderRadius: '12px',
-                                padding: '1rem 1.5rem',
-                                marginBottom: '1.5rem',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                gap: '0.75rem'
-                            }}>
-                                <span style={{ fontSize: '1.5rem' }}>❤️</span>
-                                <div>
-                                    <div style={{ fontWeight: '600', color: '#ec4899', fontSize: '1.1rem' }}>
-                                        Viewing Your Saved Favorites
-                                    </div>
-                                    <div style={{ fontSize: '0.85rem', color: '#94a3b8', marginTop: '0.25rem' }}>
-                                        These domains are loaded from your Firebase account
-                                    </div>
-                                </div>
-                            </div>
-                        )}
+
+
 
                         {/* Stats */}
                         <StatsRow
@@ -493,6 +502,10 @@ const DomainAnalysis = () => {
                             setSortOrder={setSortOrder}
                             sortDropdownOpen={sortDropdownOpen}
                             setSortDropdownOpen={setSortDropdownOpen}
+                            priceSort={priceSort}
+                            setPriceSort={setPriceSort}
+                            priceDropdownOpen={priceDropdownOpen}
+                            setPriceDropdownOpen={setPriceDropdownOpen}
                             domainsLength={domains.length}
                         />
                         {/* Super Valuation Button */}
@@ -533,6 +546,56 @@ const DomainAnalysis = () => {
                             </div>
                         )}
 
+                        {/* Favorites Mode Banner (Moved) */}
+                        {showFavoritesOnly && (
+                            <div style={{
+                                background: 'linear-gradient(135deg, rgba(236, 72, 153, 0.15), rgba(190, 24, 93, 0.15))',
+                                border: '1px solid rgba(236, 72, 153, 0.2)',
+                                borderRadius: '8px',
+                                padding: '0.6rem 1rem',
+                                marginBottom: '0.75rem',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'space-between',
+                                gap: '0.75rem'
+                            }}>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                                    <span style={{ fontSize: '1.2rem' }}>❤️</span>
+                                    <div>
+                                        <div style={{ fontWeight: '600', color: '#ec4899', fontSize: '1rem' }}>
+                                            Viewing Your Saved Favorites
+                                        </div>
+                                        <div style={{ fontSize: '0.8rem', color: '#94a3b8', marginTop: '0.15rem' }}>
+                                            These domains are loaded from your Firebase account
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button
+                                    onClick={handleCopyFavorites}
+                                    style={{
+                                        background: favoritesCopied ? 'rgba(34, 197, 94, 0.2)' : 'rgba(255, 255, 255, 0.1)',
+                                        border: `1px solid ${favoritesCopied ? 'rgba(34, 197, 94, 0.4)' : 'rgba(255, 255, 255, 0.1)'}`,
+                                        padding: '0.35rem 0.8rem',
+                                        borderRadius: '6px',
+                                        color: favoritesCopied ? '#4ade80' : 'white',
+                                        cursor: 'pointer',
+                                        fontWeight: '600',
+                                        fontSize: '0.8rem',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: '0.4rem',
+                                        transition: 'all 0.2s ease',
+                                        boxShadow: favoritesCopied ? '0 0 10px rgba(34, 197, 94, 0.2)' : 'none'
+                                    }}
+                                    title="Copy all domains list to clipboard"
+                                >
+                                    <span>{favoritesCopied ? '✓' : '📋'}</span>
+                                    {favoritesCopied ? 'Copied!' : 'Copy List'}
+                                </button>
+                            </div>
+                        )}
+
                         {/* Top Pagination */}
                         <Pagination
                             currentPage={currentPage}
@@ -553,6 +616,8 @@ const DomainAnalysis = () => {
                             handleAnalyseAtom={handleAnalyseAtom}
                             isFavorite={isFavorite}
                             onToggleFavorite={handleToggleFavorite}
+                            columnSort={columnSort}
+                            setColumnSort={setColumnSort}
                         />
 
                         {/* Bottom Pagination */}
