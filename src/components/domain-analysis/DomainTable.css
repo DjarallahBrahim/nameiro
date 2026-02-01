@@ -387,9 +387,7 @@
     align-items: center;
     justify-content: center;
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    opacity: 0;
     /* Hidden by default */
-    transform: translateX(-5px);
     width: 28px;
     height: 28px;
 }
@@ -437,4 +435,45 @@
     100% {
         transform: scale(1);
     }
+}
+
+/* External Link Buttons (Google / DotDB) */
+.btn-external-link {
+    text-decoration: none;
+    background: transparent;
+    color: #64748b;
+    font-size: 0.85rem;
+    padding: 0.4rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 1;
+    transform: none;
+    width: 28px;
+    height: 28px;
+    line-height: 1;
+}
+
+.btn-external-link:focus {
+    opacity: 1;
+    transform: none;
+}
+
+.btn-external-link:hover {
+    background: rgba(148, 163, 184, 0.15);
+    transform: scale(1.15) !important;
+}
+
+.google-link:hover {
+    color: #DB4437;
+    /* Google Red/Brand color approx */
+    background: rgba(219, 68, 55, 0.1);
+}
+
+.dotdb-link:hover {
+    color: #3b82f6;
+    /* Blueish for DotDB */
+    background: rgba(59, 130, 246, 0.1);
 }

@@ -135,6 +135,37 @@ const DomainList = ({
                                             <span className="copy-icon">📋</span>
                                             <span className="check-icon">✓</span>
                                         </button>
+
+                                        {/* Google Search */}
+                                        <a
+                                            href={`https://www.google.com/search?q=${domainName.split('.')[0]}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="btn-external-link google-link"
+                                            onClick={(e) => e.stopPropagation()}
+                                            title="Search on Google"
+                                        >
+                                            <svg viewBox="0 0 24 24" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                                                <g transform="matrix(1, 0, 0, 1, 0, 0)">
+                                                    <path d="M21.35,11.1H12v3.8h5.6c-0.6,2.3-2.5,3.8-5.6,3.8c-3.5,0-6.2-2.7-6.2-6.2s2.7-6.2,6.2-6.2c1.7,0,3.1,0.6,4.2,1.5l2.9-2.9 C17.2,2.9,14.8,2,12,2C6.5,2,2,6.5,2,12s4.5,10,10,10c5.7,0,9.7-4,9.7-10C21.7,11.6,21.6,11.3,21.35,11.1z" fill="currentColor" />
+                                                </g>
+                                            </svg>
+                                        </a>
+
+                                        {/* DotDB Search */}
+                                        <a
+                                            href={`https://dotdb.com/search?keyword=${domainName.split('.')[0]}&position=any`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="btn-external-link dotdb-link"
+                                            onClick={(e) => e.stopPropagation()}
+                                            title="Search on DotDB"
+                                        >
+                                            <svg viewBox="0 0 100 100" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="50" cy="50" r="50" fill="#007bff" />
+                                                <text x="50" y="75" font-family="Arial, sans-serif" font-weight="bold" font-size="70" text-anchor="middle" fill="#ffffff">d</text>
+                                            </svg>
+                                        </a>
                                     </div>
                                 </td>
                                 <td className="td-auction">
