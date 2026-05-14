@@ -1,0 +1,113 @@
+.trusted-brands-section {
+    padding: 3rem 1rem;
+    text-align: center;
+    background: transparent;
+    overflow: hidden;
+}
+
+.brands-header {
+    margin-bottom: 2.5rem;
+    animation: fadeDownBrand 0.8s ease-out forwards;
+}
+
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    /* Soft gradient fade on the edges so brands enter and leave smoothly */
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.marquee-content {
+    display: flex;
+    width: max-content;
+    align-items: center;
+    animation: scrollMarquee 30s linear infinite;
+    padding: 1rem 0;
+}
+
+.marquee-content:hover {
+    animation-play-state: paused;
+}
+
+.brand-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 130px;
+    width: 260px;
+    margin: 0 1.5rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    /* very light shadow */
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.brand-logo:hover {
+    transform: scale(1.05);
+}
+
+.brand-logo img {
+    max-height: 95px;
+    max-width: 210px;
+    object-fit: contain;
+}
+
+@keyframes scrollMarquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+
+    /* Half width is exactly one full set of brands */
+}
+
+@keyframes fadeDownBrand {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .brand-logo {
+        height: 100px;
+        width: 200px;
+        margin: 0 1rem;
+    }
+
+    .brand-logo img {
+        max-height: 75px;
+        max-width: 160px;
+    }
+
+    .marquee-content {
+        animation-duration: 20s;
+        /* Faster on mobile since screen is smaller */
+    }
+}
+
+@media (max-width: 480px) {
+    .brand-logo {
+        height: 85px;
+        width: 170px;
+        margin: 0 0.8rem;
+    }
+
+    .brand-logo img {
+        max-height: 65px;
+        max-width: 140px;
+    }
+}

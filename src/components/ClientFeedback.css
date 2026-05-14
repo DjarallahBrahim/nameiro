@@ -1,0 +1,111 @@
+.client-feedback-section {
+    padding: 5rem 1rem;
+    text-align: center;
+    background: transparent;
+}
+
+.feedback-header {
+    margin-bottom: 3.5rem;
+    animation: fadeDownFeedback 0.8s ease-out forwards;
+}
+
+.carousel-wrapper {
+    max-width: 800px;
+    /* Allow varying screenshot sizes */
+    margin: 0 auto;
+}
+
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    animation: fadeUpFeedback 0.6s ease-out forwards;
+    padding: 1.5rem 0;
+    /* Add padding so shadows aren't clipped by overflow */
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.carousel-slide {
+    min-width: 100%;
+    /* Ensure each slide takes 100% of container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.carousel-slide img {
+    width: auto;
+    max-width: 100%;
+    max-height: 550px;
+    object-fit: contain;
+    display: block;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin: 0 auto;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 1.5rem;
+    animation: fadeUpFeedback 0.8s ease-out forwards;
+}
+
+.dot {
+    width: 25px;
+    height: 8px;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.15);
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, width 0.3s;
+}
+
+.dot.active {
+    background: var(--primary-color, #007bff);
+    /* Adapt to theme or default */
+    width: 40px;
+    /* Expands dot for active state */
+}
+
+@keyframes fadeUpFeedback {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeDownFeedback {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+    .client-feedback-section {
+        padding: 4rem 1rem;
+    }
+
+    .carousel-slide img {
+        max-height: 400px;
+    }
+}

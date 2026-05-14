@@ -3,8 +3,9 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import SalesTicker from './components/SalesTicker';
 import TrustSection from './components/TrustSection';
+import TrustedBrands from './components/TrustedBrands';
+import ClientFeedback from './components/ClientFeedback';
 import SellerProfile from './components/SellerProfile';
 import DomainGrid from './components/DomainGrid';
 import Footer from './components/Footer';
@@ -36,8 +37,9 @@ const HomePage = () => {
     <>
       <Navbar />
       <Hero />
-      <SalesTicker />
       <TrustSection />
+      <TrustedBrands />
+      <ClientFeedback />
       <DomainGrid />
       <SellerProfile />
       <Contact />
